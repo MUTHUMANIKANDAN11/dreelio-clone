@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface FooterProps {
     className?: string;
@@ -10,7 +11,9 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
           <div className="footer-head text-[46px] w-[470px] font-semibold text-center">Ready to get started</div>
           <div className="footer-subhead text-[18px] text-[#453F3D] mt-3">Download Dreelio for free. No credit card required.</div>
           <div className="footer-btn flex items-center gap-5 mt-10">
-            <button className="card-btn w-[100%] h-[50px] bg-black rounded-full px-5 text-white text-[16px] font-semibold">Try Freelio free</button>
+            <Link href={'/contact'}>
+              <button className="card-btn w-[100%] h-[50px] bg-black rounded-full px-5 text-white text-[16px] font-semibold cursor-pointer">Try Freelio free</button>
+            </Link>
           </div>
 
           <img src="./images/cloud1.png" className="w-[400px] h-[250px] bg-fit absolute top-10 left-[-200px]" alt="" />

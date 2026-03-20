@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface FeatureItem {
     icon: string;
@@ -39,9 +40,11 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
                 <div className="text-[48px] leading-[62px] font-semibold mt-5">{head}</div>
                 <div className="text-[16px] leading-[26px] mt-5 text-[#453F3D]">{content}</div>
                 {buttonText && (
-                    <button className="text-[16px] px-6 py-3 rounded-full mt-7 font-semibold text-white bg-black font-medium cursor-pointer">
-                        {buttonText}
-                    </button>
+                    <Link href={'/contact'}>
+                        <button className="text-[16px] px-6 py-3 rounded-full mt-7 font-semibold text-white bg-black font-medium cursor-pointer">
+                            {buttonText}
+                        </button>
+                    </Link>
                 )}
             </div>
             <div className="grid grid-cols-2 gap-4">

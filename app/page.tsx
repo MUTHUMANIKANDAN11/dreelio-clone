@@ -6,6 +6,7 @@ import { TestimonialCard } from '../components/TestimonialCard';
 import { PricingCard } from '../components/PricingCard';
 import { BlogCard } from '../components/BlogCard';
 import { CommunityCard } from '../components/CommunityCard';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -20,12 +21,16 @@ export default function Home() {
           <div className="hero-head text-[68px] leading-[88px] font-semibold text-center">Run your freelance business like a pro</div>
           <div className="hero-content text-[20px] font-normal text-center text-slate-600 w-[75%] mt-4">All-in-one platform for managing cliens, projects, and payments without the chaos. From first contract to final invoice, we've got your back.</div>
           <div className="hero-button mt-10">
-            <button className="text-[16px] bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mr-2">
-              Try Dreelio free
-            </button>
-            <button className="text-[16px] px-6 py-3 rounded-full bg-gray-100/20 font-medium cursor-pointer">
-              See features
-            </button>
+            <Link href={'/contact'}>
+              <button className="text-[16px] bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mr-2">
+                Try Dreelio free
+              </button>
+            </Link>
+            <Link href={'/#features'}>
+              <button className="text-[16px] px-6 py-3 rounded-full bg-gray-100/20 font-medium cursor-pointer">
+                See features
+              </button>
+            </Link>
           </div>
           <div className="hero-img mt-10">
             <img src="./images/hero.png" className="rounded-2xl" alt="" />
@@ -36,7 +41,7 @@ export default function Home() {
       <div className="bg-[linear-gradient(to_bottom,_white_20%,_#F4F1EE_40%,_#C4DCF4_70%)]">
         <TrustedBrands className="h-[300px]" titleClassName="mt-30" />
 
-        <div className="hero3 w-[100vw] h-[100%] flex flex-col items-center justify-start">
+        <div className="hero3 w-[100vw] h-[100%] flex flex-col items-center justify-start scroll-mt-24">
           <div className="hero3-subhead text-[14px] font-bold mt-20 text-[#614A44]">SEAMLESS ACROSS DEVICES</div>
           <div className="hero3-head text-[48px] leading-[62px] font-semibold text-center w-[600px] mt-5">Work from anywhere, stay in sync</div>
 
@@ -53,6 +58,7 @@ export default function Home() {
           </div>
         </div>
 
+        <div id="features" className=""></div>
         <FeatureBox
           subhead="PROJECT MANAGEMENT"
           head="Keep every project moving forward"
@@ -80,6 +86,8 @@ export default function Home() {
           imageSrc="/images/hero5.png"
           reverse={true}
         />
+
+        <div id="benefits" className=""></div>
 
         <div className="hero6 w-[100vw] h-[100%] flex flex-col items-center justify-center mt-30">
           <div className="hero6-subhead text-[14px] font-bold text-[#614A44]">FEATURES</div>
@@ -171,6 +179,7 @@ export default function Home() {
           </div>
         </div>
 
+        <div id="pricing" className=""></div>
         <div className="hero8 flex flex-col items-center justify-center mt-40">
           <div className="hero8-sunhead text-[16px] font-semibold text-[#757170]">PRICING</div>
           <div className="hero8-head text-[46px] w-[390px] font-semibold text-center">Simple plans</div>
@@ -215,7 +224,7 @@ export default function Home() {
           <div className="hero9-head text-[14px] font-semibold text-[#757170]">BLOG</div>
           <div className="hero9-head text-[46px] w-[470px] font-semibold text-center">Ideas to level-up your freelance game</div>
 
-          <div className="hero9-content flex items-center justify-center mt-10">
+          <Link href={'/blog'} className="hero9-content flex items-center justify-center mt-10">
             <div className="hero9-content-left w-[500px] h-[510px] rounded-l-3xl bg-white/70">
               <img src="./images/hero9.1.png" alt="" className="w-[100%] h-[100%] object-cover rounded-3xl p-2" />
             </div>
@@ -240,7 +249,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
 
           <div className="hero9-footer flex w-[1000px] justify-between items-center mt-7">
             <BlogCard
@@ -249,6 +258,7 @@ export default function Home() {
               tag="TOOLS"
               tagColor="#156CC2"
             />
+
             <BlogCard
               imageSrc="./images/hero9.3.png"
               title="A complete guide to project success in 2026"

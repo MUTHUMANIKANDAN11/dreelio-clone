@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 interface PricingCardProps {
     title: string;
@@ -27,9 +28,11 @@ export const PricingCard: React.FC<PricingCardProps> = ({ title, price, descript
                     ))}
                 </ul>
             </div>
-            <button className={`card-btn w-[100%] h-[50px] ${isPremium ? 'bg-black text-white' : 'bg-[#F4F1EE] text-black'} rounded-full text-[16px] font-semibold mt-10`}>
-                {buttonText}
-            </button>
+            <Link href={'/contact'}>
+                <button className={`card-btn w-[100%] h-[50px] ${isPremium ? 'bg-black text-white' : 'bg-[#F4F1EE] text-black'} rounded-full text-[16px] font-semibold mt-10 cursor-pointer`}>
+                    {buttonText}
+                </button>
+            </Link>
         </div>
     );
 };
