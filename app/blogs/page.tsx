@@ -20,7 +20,7 @@ export default function Home() {
                 <SingleBlog />
             </div>
 
-            <BlogList />
+            <BlogList excludeMainBlog={true} />
             <Footer />
         </main>
     );

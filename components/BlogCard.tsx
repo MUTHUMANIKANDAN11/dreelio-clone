@@ -2,15 +2,16 @@ import Link from 'next/link';
 import React from 'react';
 
 interface BlogCardProps {
+    id: string;
     imageSrc: string;
     title: string;
     tag: string;
     tagColor: string;
 }
 
-export const BlogCard: React.FC<BlogCardProps> = ({ imageSrc, title, tag, tagColor }) => {
+export const BlogCard: React.FC<BlogCardProps> = ({ id, imageSrc, title, tag, tagColor }) => {
     return (
-        <Link href="/blog" className="block w-[100%] h-[100%]">
+        <Link href={`/blog/${id}`} className="block w-[100%] h-[100%]">
             <div className="footer-card w-[100%] h-[100%] rounded-3xl">
                 <div className="card-top">
                     <img src={imageSrc} className="w-[320px] h-[300px] object-cover rounded-3xl" alt={title} />

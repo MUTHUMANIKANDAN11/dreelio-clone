@@ -21,11 +21,13 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                 <Link href="/blogs" className="header-nav px-2 py-1">Blog</Link>
                 <Link href="/contact" className="header-nav px-2 py-1">Contact Us</Link>
             </div>
-            <div className="header-right">
-                <button className="text-[14px] bg-black text-white font-semibold leading-[19px] rounded-full px-6 py-4 cursor-pointer">
-                    Try Dreelio free
-                </button>
-            </div>
+            <Link href="/contact">
+                <div className="header-right">
+                    <button className="text-[14px] bg-black text-white font-semibold leading-[19px] rounded-full px-6 py-4 cursor-pointer">
+                        Try Dreelio free
+                    </button>
+                </div>
+            </Link>
         </div>
     );
 };

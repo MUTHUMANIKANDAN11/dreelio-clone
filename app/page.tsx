@@ -196,7 +196,7 @@ export default function Home() {
 
           <SingleBlog />
 
-          <BlogList />
+          <BlogList excludeMainBlog={true} />
         </div>
 
         <Community />
