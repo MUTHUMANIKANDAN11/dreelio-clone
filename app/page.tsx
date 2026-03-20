@@ -2,10 +2,10 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { TrustedBrands } from '../components/TrustedBrands';
 import { FeatureBox } from '../components/FeatureBox';
-import { TestimonialCard } from '../components/TestimonialCard';
+import Testimonial from '@/components/Testimonial';
 import { PricingCard } from '../components/PricingCard';
 import { BlogCard } from '../components/BlogCard';
-import { CommunityCard } from '../components/CommunityCard';
+import Community from '@/components/Community';
 import Link from 'next/link';
 
 export default function Home() {
@@ -38,7 +38,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-[linear-gradient(to_bottom,_white_20%,_#F4F1EE_40%,_#C4DCF4_70%)]">
+      <div className="bg-[linear-gradient(to_bottom,_white_20%,_#F4F1EE_50%,_#C6DCF4_80%)]">
         <TrustedBrands className="h-[300px]" titleClassName="mt-30" />
 
         <div className="hero3 w-[100vw] h-[100%] flex flex-col items-center justify-start scroll-mt-24">
@@ -146,38 +146,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero7 flex flex-col items-center justify-center mt-40">
-          <div className="hero7-head text-[50px] w-[720px] font-semibold text-center">"Dreelio is by far the best agency tool I have ever used"</div>
-          <div className="hero7-content flex flex-col items-center justify-center mt-10">
-            <div className="user-img flex">
-              <img src="./images/user1.png" className="h-[60px] w-[60px] object-cover rounded-full" alt="" />
-            </div>
-            <div className="user-content flex flex-col items-center justify-center mt-5">
-              <div className="user-name text-[18px] font-semibold">Martha punla</div>
-              <div className="user-role text-[14px] text-[#757170]">VP Marketing, Meta</div>
-            </div>
-          </div>
-          <div className="hero7-footer mt-10 flex gap-5">
-            <TestimonialCard
-              content="&quot;As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.&quot;"
-              imageSrc="./images/user2.png"
-              userName="Leah Daniel"
-              userRole="Design Ops lead, teamwork"
-            />
-            <TestimonialCard
-              content="&quot;As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.&quot;"
-              imageSrc="./images/user3.png"
-              userName="Sergio Walker"
-              userRole="Agency Owner"
-            />
-            <TestimonialCard
-              content="&quot;We used to duct-tape tools together. Now our contracts, time tracking, and payments live in one clean system. It's everything a small team needs to stay pro.&quot;"
-              imageSrc="./images/user4.png"
-              userName="Jane Jay Jay"
-              userRole="Project Manager, Google"
-            />
-          </div>
-        </div>
+        <Testimonial />
 
         <div id="pricing" className=""></div>
         <div className="hero8 flex flex-col items-center justify-center mt-40">
@@ -274,27 +243,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="hero10 w-[100vw] h-[500px] flex flex-col items-center justify-start mt-20">
-          <div className="hero10-subhead text-[14px] font-semibold text-[#757170]">COMMUNITY</div>
-          <div className="hero10-head text-[46px] w-[470px] font-semibold text-center">Stay in the loop</div>
-
-          <div className="hero10-content w-[100vw] flex items-center justify-center gap-5 mt-10">
-            <CommunityCard
-              platform="X/Twitter"
-              logoSrc="./images/x-logo.png"
-              followers="15.2K FOLLOWERS"
-              description="Stay updated on new features and discover how others are using Dreelio."
-              buttonText="Floow us"
-            />
-            <CommunityCard
-              platform="YouTube"
-              logoSrc="./images/youtube-logo.png"
-              followers="32K SUBSCRIBERS"
-              description="Tips, tutorials, and in-depth feature guides to inspire and enhance your Dreelio workflow."
-              buttonText="Subscribe"
-            />
-          </div>
-        </div>
+        <Community />
 
         <Footer />
       </div>
