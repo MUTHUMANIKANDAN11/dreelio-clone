@@ -4,7 +4,8 @@ import { TrustedBrands } from '../components/TrustedBrands';
 import { FeatureBox } from '../components/FeatureBox';
 import Testimonial from '@/components/Testimonial';
 import { PricingCard } from '../components/PricingCard';
-import { BlogCard } from '../components/BlogCard';
+import SingleBlog from '@/components/SingleBlog';
+import BlogList from '@/components/BlogList';
 import Community from '@/components/Community';
 import Link from 'next/link';
 
@@ -193,54 +194,9 @@ export default function Home() {
           <div className="hero9-head text-[14px] font-semibold text-[#757170]">BLOG</div>
           <div className="hero9-head text-[46px] w-[470px] font-semibold text-center">Ideas to level-up your freelance game</div>
 
-          <Link href={'/blog'} className="hero9-content flex items-center justify-center mt-10">
-            <div className="hero9-content-left w-[500px] h-[510px] rounded-l-3xl bg-white/70">
-              <img src="./images/hero9.1.png" alt="" className="w-[100%] h-[100%] object-cover rounded-3xl p-2" />
-            </div>
+          <SingleBlog />
 
-            <div className="hero9-content-right w-[500px] bg-white/70 h-[510px] rounded-r-3xl p-10 flex flex-col justify-between">
-              <div className="flex flex-col">
-                <button className="flex items-center justify-center text-white bg-[#614A44] w-fit pt-2 pb-1 px-5 rounded-full">MUST READ</button>
-                <div className="card-head text-[34px] font-semibold mt-8">How to start a 100k creative agency in 2025</div>
-                <div className="card-content text-[16px] text-[#453F3D] mt-5">Learn how to kickstart your journey into agrncy ownership with our comprehensive guide.</div>
-              </div>
-
-              <div className="card-footer flex items-center justify-between mt-10">
-                <div className="card-footer-left flex items-center gap-2">
-                  <img src="./images/user1.png" alt="" className="w-[50px] h-[50px] object-cover rounded-full" />
-                  <div className="card-footer-left-content flex flex-col ml-2 justify-center">
-                    <div className="card-footer-left-content-head text-[16px] font-semibold">Dhyna Phils</div>
-                    <div className="card-footer-left-content-head text-[14px] text-[#757170]">Head of Marketing</div>
-                  </div>
-                </div>
-                <div className="card-footer-right flex items-center gap-2">
-                  <button className="flex items-center text-[12px] justify-center font-bold text-white bg-[#C9502E] pt-2 pb-1 px-3 rounded-full">FEATURED</button>
-                </div>
-              </div>
-            </div>
-          </Link>
-
-          <div className="hero9-footer flex w-[1000px] justify-between items-center mt-7">
-            <BlogCard
-              imageSrc="./images/hero9.2.png"
-              title="Top 10 degital agency software"
-              tag="TOOLS"
-              tagColor="#156CC2"
-            />
-
-            <BlogCard
-              imageSrc="./images/hero9.3.png"
-              title="A complete guide to project success in 2026"
-              tag="INSIGHT"
-              tagColor="#CF8D13"
-            />
-            <BlogCard
-              imageSrc="./images/hero9.4.png"
-              title="What Are Billoble Hours"
-              tag="MANAGEMENT"
-              tagColor="#0EA158"
-            />
-          </div>
+          <BlogList />
         </div>
 
         <Community />
