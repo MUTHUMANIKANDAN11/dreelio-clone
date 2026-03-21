@@ -1,25 +1,48 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Link from 'next/link';
+import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 
 interface HeaderProps {
     className?: string;
 }
 
 export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
+    const { scrollY } = useScroll();
+    const [scrolled, setScrolled] = useState(false);
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        if (latest > 120 && !scrolled) {
+            setScrolled(true);
+        } else if (latest <= 120 && scrolled) {
+            setScrolled(false);
+        }
+    });
+
     return (
-        <div className={`header flex justify-between items-center w-[940px] fixed top-[20px] z-10 bg-white/30 backdrop-blur-md border-b border-gray-200 p-1.5 border-none rounded-full shadow-sm ${className}`}>
+        <motion.div 
+            className={`header flex justify-between items-center fixed top-[20px] left-1/2 -translate-x-1/2 z-10 p-1.5 rounded-full transition-all duration-300 ${
+                scrolled ? 'bg-white/30 backdrop-blur-md shadow-sm' : 'bg-transparent shadow-none'
+            } ${className}`}
+            initial={false}
+            animate={{
+                width: scrolled ? "800px" : "940px",
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+        >
             <Link href="/" className="header-left flex text-[18px] leading-[21px] font-semibold cursor-pointer items-center">
                 <svg className='ml-3' style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24" preserveAspectRatio="none" width="100%" height="100%">
                     <use href="/icon1.svg"></use>
                 </svg>
                 <div className="ml-1">Dreelio</div>
             </Link>
-            <div className="header-middle w-[40%] text-[14px] flex justify-between items-center h-[100%] text-slate-800">
-                <Link href="/#features" className="header-nav px-2 py-1">Features</Link>
-                <Link href="/#benefits" className="header-nav px-2 py-1">Benefits</Link>
-                <Link href="/#pricing" className="header-nav px-2 py-1">Pricing</Link>
-                <Link href="/blogs" className="header-nav px-2 py-1">Blog</Link>
-                <Link href="/contact" className="header-nav px-2 py-1">Contact Us</Link>
+            <div className={`header-middle w-[50%] text-[14px] flex justify-between items-center h-[100%] text-slate-800 ${scrolled ? '' : ''}`}>
+                <Link href="/#features" className="header-nav px-3"><div>Features</div></Link>
+                <Link href="/#benefits" className="header-nav px-3"><div>Benefits</div></Link>
+                <Link href="/#pricing" className="header-nav px-3"><div>Pricing</div></Link>
+                <Link href="/blogs" className="header-nav px-3"><div>Blog</div></Link>
+                <Link href="/contact" className="header-nav px-3"><div>Contact Us</div></Link>
             </div>
             <Link href="/contact">
                 <div className="header-right">
@@ -28,6 +51,6 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                     </button>
                 </div>
             </Link>
-        </div>
+        </motion.div>
     );
 };
