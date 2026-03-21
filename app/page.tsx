@@ -8,6 +8,7 @@ import SingleBlog from '@/components/SingleBlog';
 import BlogList from '@/components/BlogList';
 import Community from '@/components/Community';
 import Link from 'next/link';
+import { HeroImage } from '../components/HeroImage';
 
 export default function Home() {
   return (
@@ -33,13 +34,11 @@ export default function Home() {
               </button>
             </Link>
           </div>
-          <div className="hero-img mt-10">
-            <img src="./images/hero.png" className="rounded-2xl" alt="" />
-          </div>
+          <HeroImage />
         </div>
       </div>
 
-      <div className="bg-[linear-gradient(to_bottom,_white_20%,_#F4F1EE_50%,_#C6DCF4_80%)]">
+      <div className="bg-[linear-gradient(to_bottom,_white_20%,_#F4F1EE_50%,_#C6DCF4_80%)] z-1000">
         <TrustedBrands className="h-[300px]" titleClassName="mt-30" />
 
         <div className="hero3 w-[100vw] h-[100%] flex flex-col items-center justify-start scroll-mt-24">
