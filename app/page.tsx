@@ -9,6 +9,7 @@ import BlogList from '@/components/BlogList';
 import Community from '@/components/Community';
 import Link from 'next/link';
 import { HeroSection } from '../components/HeroSection';
+import { Hero3Image } from '../components/Hero3Image';
 
 export default function Home() {
   return (
@@ -24,17 +25,7 @@ export default function Home() {
           <div className="hero3-subhead text-[14px] font-bold mt-20 text-[#614A44]">SEAMLESS ACROSS DEVICES</div>
           <div className="hero3-head text-[48px] leading-[62px] font-semibold text-center w-[600px] mt-5">Work from anywhere, stay in sync</div>
 
-          <div className="hero3-images mt-10 w-[55vw] h-[650px] rounded-4xl overflow-hidden relative">
-            <img src="./images/device1.png" className="w-[100%] h-[100%] object-cover" alt="" />
-            <div className="buttons absolute bottom-10 left-[50%] translate-x-[-50%] bg-gray-100/20 backdrop-blur-sm border border-white/30 rounded-full p-1.5">
-              <button className="text-[16px] bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mr-2">
-                Mobile App
-              </button>
-              <button className="text-[16px] px-6 py-3 rounded-full font-semibold text-white bg-gray-100/20 backdrop-blur-sm border border-white/30 font-medium cursor-pointer">
-                Web App
-              </button>
-            </div>
-          </div>
+          <Hero3Image />
         </div>
 
         <div id="features" className=""></div>
