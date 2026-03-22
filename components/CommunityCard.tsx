@@ -1,3 +1,4 @@
+import { AnimatedButton } from "@/components/AnimatedButton";
 import React from 'react';
 
 interface CommunityCardProps {
@@ -20,7 +21,7 @@ export const CommunityCard: React.FC<CommunityCardProps> = ({ platform, logoSrc,
                 <div className="content-card-content-body text-[16px] text-[#453F3D] mt-2">{description}</div>
             </div>
             <div className="content-card-footer flex items-center mt-10">
-                <button className="flex items-center text-[16px] border-2 border-gray-200 justify-center font-bold py-4 px-6 rounded-full">{buttonText}</button>
+                <AnimatedButton className="flex items-center text-[16px] border-2 border-gray-200 justify-center font-bold py-4 px-6 rounded-full">{buttonText}</AnimatedButton>
             </div>
         </div>
     );

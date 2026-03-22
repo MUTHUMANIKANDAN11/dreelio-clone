@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedButton } from "@/components/AnimatedButton";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -40,18 +41,18 @@ export const PricingCard: React.FC<PricingCardProps> = ({
         <div className={`hero8-price-card ${isPremium ? 'flex flex-col w-[320px] h-[100%] bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1] border-[#84B9EF] border-[5px]' : 'w-[320px] h-[100%] bg-white'} rounded-3xl p-7`}>
             {hasToggle && (
                 <div className="buttons flex justify-between rounded-full p-1.5 bg-[#F2EFEC] mb-7">
-                  <button 
+                  <AnimatedButton 
                     onClick={() => setBillingCycle("annually")}
                     className={`text-[14px] rounded-full px-8 py-2 cursor-pointer transition-colors duration-300 font-semibold ${billingCycle === "annually" ? "text-black bg-white" : "text-[#5F6469] bg-transparent font-medium hover:bg-white/50"}`}
                   >
                     Annually
-                  </button>
-                  <button 
+                  </AnimatedButton>
+                  <AnimatedButton 
                     onClick={() => setBillingCycle("monthly")}
                     className={`text-[14px] rounded-full px-8 py-2 cursor-pointer transition-colors duration-300 font-semibold ${billingCycle === "monthly" ? "text-black bg-white" : "text-[#5F6469] bg-transparent font-medium hover:bg-white/50"}`}
                   >
                     Monthly
-                  </button>
+                  </AnimatedButton>
                 </div>
             )}
             <div className={`card-subhead text-[16px] font-semibold text-[#524C4A]`}>{title}</div>
@@ -83,9 +84,9 @@ export const PricingCard: React.FC<PricingCardProps> = ({
                 </ul>
             </div>
             <Link href={'/contact'}>
-                <button className={`card-btn w-[100%] h-[50px] ${isPremium ? 'bg-black text-white' : 'bg-[#F4F1EE] text-black'} rounded-full text-[16px] font-semibold mt-10 cursor-pointer`}>
+                <AnimatedButton className={`card-btn w-[100%] h-[50px] ${isPremium ? 'bg-black text-white' : 'bg-[#F4F1EE] text-black'} rounded-full text-[16px] font-semibold mt-10 cursor-pointer`}>
                     {buttonText}
-                </button>
+                </AnimatedButton>
             </Link>
         </div>
     );

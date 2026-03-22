@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedButton } from "@/components/AnimatedButton";
 
 import React from "react";
 import Link from 'next/link';
@@ -68,14 +69,14 @@ export const HeroSection = () => {
                         transition={{ duration: 0.2, delay: 0.2 }}
                     >
                         <Link href={'/contact'}>
-                            <button className="text-[16px] bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mr-2">
+                            <AnimatedButton className="text-[16px] bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mr-2">
                                 Try Dreelio free
-                            </button>
+                            </AnimatedButton>
                         </Link>
                         <Link href={'/#features'}>
-                            <button className="text-[16px] px-6 py-3 rounded-full bg-gray-100/20 font-medium cursor-pointer">
+                            <AnimatedButton className="text-[16px] px-6 py-3 rounded-full bg-gray-100/20 font-medium cursor-pointer">
                                 See features
-                            </button>
+                            </AnimatedButton>
                         </Link>
                     </motion.div>
                     

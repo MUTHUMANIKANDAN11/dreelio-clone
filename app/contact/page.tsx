@@ -3,6 +3,7 @@ import { Footer } from "@/components/Footer";
 import Community from "@/components/Community";
 import Testimonial from "@/components/Testimonial";
 import { CloudImages } from "@/components/CloudImages";
+import { AnimatedButton } from "@/components/AnimatedButton";
 
 export default function Home() {
   return (
@@ -41,7 +42,7 @@ export default function Home() {
               <option value="no">No</option>
             </select>
           </div>
-          <button type="submit" className="bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mt-5">Send a message</button>
+          <AnimatedButton type="submit" className="bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mt-5">Send a message</AnimatedButton>
         </form>
       </div>
 

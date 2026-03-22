@@ -1,3 +1,4 @@
+import { AnimatedButton } from "@/components/AnimatedButton";
 import Link from "next/link"
 import { blogs } from "../data/blogs"
 
@@ -14,7 +15,7 @@ export default function SingleBlog() {
 
             <div className="hero9-content-right w-[500px] bg-white/70 h-[510px] rounded-r-3xl p-10 flex flex-col justify-between">
                 <div className="flex flex-col">
-                    <button className="flex items-center justify-center text-white bg-[#614A44] w-fit pt-2 pb-1 px-5 rounded-full">{blog.tag}</button>
+                    <AnimatedButton className="flex items-center justify-center text-white bg-[#614A44] w-fit pt-2 pb-1 px-5 rounded-full">{blog.tag}</AnimatedButton>
                     <div className="card-head text-[34px] font-semibold mt-8">{blog.title}</div>
                     <div className="card-content text-[16px] text-[#453F3D] mt-5">{blog.description}</div>
                 </div>
@@ -28,7 +29,7 @@ export default function SingleBlog() {
                         </div>
                     </div>
                     <div className="card-footer-right flex items-center gap-2">
-                        <button className="flex items-center text-[12px] justify-center font-bold text-white bg-[#C9502E] pt-2 pb-1 px-3 rounded-full">FEATURED</button>
+                        <AnimatedButton className="flex items-center text-[12px] justify-center font-bold text-white bg-[#C9502E] pt-2 pb-1 px-3 rounded-full">FEATURED</AnimatedButton>
                     </div>
                 </div>
             </div>

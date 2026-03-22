@@ -1,3 +1,4 @@
+import { AnimatedButton } from "@/components/AnimatedButton";
 import Link from 'next/link';
 import React from 'react';
 
@@ -19,9 +20,9 @@ export const BlogCard: React.FC<BlogCardProps> = ({ id, imageSrc, title, tag, ta
                 <div className="card-content flex justify-between items-center mt-5 pr-3">
                     <div className="card-left w-[70%] text-[18px] font-semibold">{title}</div>
                     <div className="card-right">
-                        <button className={`flex items-center text-[12px] justify-center font-bold text-white pt-2 pb-1 px-3 rounded-full`} style={{ backgroundColor: tagColor }}>
+                        <AnimatedButton className={`flex items-center text-[12px] justify-center font-bold text-white pt-2 pb-1 px-3 rounded-full`} style={{ backgroundColor: tagColor }}>
                             {tag}
-                        </button>
+                        </AnimatedButton>
                     </div>
                 </div>
             </div>

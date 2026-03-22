@@ -2,6 +2,7 @@
 
 import React, { useRef, useState } from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { AnimatedButton } from "@/components/AnimatedButton";
 
 export const Hero3Image = () => {
     const ref = useRef(null);
@@ -39,18 +40,18 @@ export const Hero3Image = () => {
                 </motion.div>
             </motion.div>
             <div className="buttons absolute bottom-10 left-[50%] translate-x-[-50%] bg-gray-100/20 backdrop-blur-sm border border-white/30 rounded-full p-1.5 flex gap-2 transition-all">
-                <button 
+                <AnimatedButton 
                     onClick={() => setActiveDevice("mobile")}
                     className={activeDevice === "mobile" ? activeClass : inactiveClass}
                 >
                     Mobile App
-                </button>
-                <button 
+                </AnimatedButton>
+                <AnimatedButton 
                     onClick={() => setActiveDevice("web")}
                     className={activeDevice === "web" ? activeClass : inactiveClass}
                 >
                     Web App
-                </button>
+                </AnimatedButton>
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedButton } from "@/components/AnimatedButton";
 
 import React from 'react';
 import Link from 'next/link';
@@ -15,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
           <div className="footer-subhead text-[18px] text-[#453F3D] mt-3">Download Dreelio for free. No credit card required.</div>
           <div className="footer-btn flex items-center gap-5 mt-10">
             <Link href={'/contact'}>
-              <button className="card-btn w-[100%] h-[50px] bg-black rounded-full px-5 text-white text-[16px] font-semibold cursor-pointer">Try Freelio free</button>
+              <AnimatedButton className="card-btn w-[100%] h-[50px] bg-black rounded-full px-5 text-white text-[16px] font-semibold cursor-pointer">Try Freelio free</AnimatedButton>
             </Link>
           </div>
 

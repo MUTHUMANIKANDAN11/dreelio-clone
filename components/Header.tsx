@@ -1,4 +1,5 @@
 "use client";
+import { AnimatedButton } from "@/components/AnimatedButton";
 
 import React, { useState } from 'react';
 import Link from 'next/link';
@@ -46,9 +47,9 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             </div>
             <Link href="/contact">
                 <div className="header-right">
-                    <button className="text-[14px] bg-black text-white font-semibold leading-[19px] rounded-full px-6 py-4 cursor-pointer">
+                    <AnimatedButton className="text-[14px] bg-black text-white font-semibold leading-[19px] rounded-full px-6 py-4 cursor-pointer">
                         Try Dreelio free
-                    </button>
+                    </AnimatedButton>
                 </div>
             </Link>
         </motion.div>
