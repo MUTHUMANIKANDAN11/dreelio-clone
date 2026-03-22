@@ -11,10 +11,10 @@ interface BlogCardProps {
 
 export const BlogCard: React.FC<BlogCardProps> = ({ id, imageSrc, title, tag, tagColor }) => {
     return (
-        <Link href={`/blog/${id}`} className="block w-[100%] h-[100%]">
+        <Link href={`/blog/${id}`} className="block w-[100%] h-[100%] group">
             <div className="footer-card w-[100%] h-[100%] rounded-3xl">
-                <div className="card-top">
-                    <img src={imageSrc} className="w-[320px] h-[300px] object-cover rounded-3xl" alt={title} />
+                <div className="card-top overflow-hidden rounded-3xl">
+                    <img src={imageSrc} className="w-[320px] h-[300px] object-cover transition-transform duration-700 ease-out group-hover:scale-110" alt={title} />
                 </div>
                 <div className="card-content flex justify-between items-center mt-5 pr-3">
                     <div className="card-left w-[70%] text-[18px] font-semibold">{title}</div>

@@ -5,9 +5,11 @@ export default function SingleBlog() {
     const blog = blogs[0];
     
     return (
-        <Link href={`/blog/${blog.id}`} className="hero9-content flex items-center justify-center mt-10">
-            <div className="hero9-content-left w-[500px] h-[510px] rounded-l-3xl bg-white/70">
-                <img src={blog.imageSrc} alt="" className="w-[100%] h-[100%] object-cover rounded-3xl p-2" />
+        <Link href={`/blog/${blog.id}`} className="hero9-content flex items-center justify-center mt-10 group">
+            <div className="hero9-content-left w-[500px] h-[510px] rounded-l-3xl bg-white/70 p-2">
+                <div className="w-full h-full overflow-hidden rounded-3xl">
+                    <img src={blog.imageSrc} alt="" className="w-[100%] h-[100%] object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                </div>
             </div>
 
             <div className="hero9-content-right w-[500px] bg-white/70 h-[510px] rounded-r-3xl p-10 flex flex-col justify-between">
