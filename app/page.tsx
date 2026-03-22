@@ -8,35 +8,14 @@ import SingleBlog from '@/components/SingleBlog';
 import BlogList from '@/components/BlogList';
 import Community from '@/components/Community';
 import Link from 'next/link';
-import { HeroImage } from '../components/HeroImage';
+import { HeroSection } from '../components/HeroSection';
 
 export default function Home() {
   return (
     <main className="flex items-center flex-col overflow-x-hidden overflow-y-hidden">
       <Header />
 
-      <img src="./images/cloud1.png" className="w-[400px] h-[250px] bg-fit absolute top-40 left-[-200px]" alt="" />
-      <img src="./images/cloud2.png" className="w-[400px] h-[250px] bg-fit absolute top-40 right-[-200px]" alt="" />
-
-      <div className="hero w-[100vw] h-[110vh] flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1]">
-        <div className="h-[100vh] w-[940px] flex flex-col items-center mt-35">
-          <div className="hero-head text-[68px] leading-[88px] font-semibold text-center">Run your freelance business like a pro</div>
-          <div className="hero-content text-[20px] font-normal text-center text-slate-600 w-[75%] mt-4">All-in-one platform for managing cliens, projects, and payments without the chaos. From first contract to final invoice, we've got your back.</div>
-          <div className="hero-button mt-10">
-            <Link href={'/contact'}>
-              <button className="text-[16px] bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mr-2">
-                Try Dreelio free
-              </button>
-            </Link>
-            <Link href={'/#features'}>
-              <button className="text-[16px] px-6 py-3 rounded-full bg-gray-100/20 font-medium cursor-pointer">
-                See features
-              </button>
-            </Link>
-          </div>
-          <HeroImage />
-        </div>
-      </div>
+      <HeroSection />
 
       <div className="bg-[linear-gradient(to_bottom,_white_20%,_#F4F1EE_50%,_#C6DCF4_80%)] z-1000">
         <TrustedBrands className="h-[300px]" titleClassName="mt-30" />

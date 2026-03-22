@@ -1,0 +1,101 @@
+"use client";
+
+import React from "react";
+import Link from 'next/link';
+import { motion } from "framer-motion";
+import { HeroImage } from "./HeroImage";
+
+const AnimatedText = ({ text, className, delayOffset = 0 }: { text: string; className: string, delayOffset?: number }) => {
+    let charIndex = 0;
+    
+    return (
+        <div className={className} style={{ wordBreak: "keep-all", overflowWrap: "normal" }}>
+            {text.split(" ").map((word, wordIndex, array) => {
+                const isLateWord = wordIndex > 0;
+                if (isLateWord) charIndex++;
+
+                return (
+                <React.Fragment key={wordIndex}>
+                    <span style={{ display: "inline-block", whiteSpace: "nowrap" }}>
+                        {word.split("").map((char, charIdx) => {
+                            const index = charIndex++;
+                            return (
+                                <motion.span
+                                    key={charIdx}
+                                    initial={{ opacity: 0, x: 20, y: 0, rotate: 3 }}
+                                    animate={{ opacity: 1, x: 0, y: 0, rotate: 0 }}
+                                    transition={{
+                                        duration: 0.1,
+                                        delay: delayOffset + index * 0.01,
+                                        ease: "easeOut"
+                                    }}
+                                    style={{ display: "inline-block" }}
+                                >
+                                    {char}
+                                </motion.span>
+                            );
+                        })}
+                    </span>
+                    {wordIndex < array.length - 1 && " "}
+                </React.Fragment>
+            )})}
+        </div>
+    );
+};
+
+export const HeroSection = () => {
+    return (
+        <>
+            <motion.img 
+                src="./images/cloud1.png" 
+                className="w-[400px] h-[250px] bg-fit absolute top-40 left-[-200px] z-10 pointer-events-none" 
+                alt="cloud left" 
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+            />
+            <motion.img 
+                src="./images/cloud2.png" 
+                className="w-[400px] h-[250px] bg-fit absolute top-40 right-[-200px] z-10 pointer-events-none" 
+                alt="cloud right" 
+                initial={{ x: 100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+            />
+
+            <div className="hero w-[100vw] h-[110vh] flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1]">
+                <div className="h-[100vh] w-[940px] flex flex-col items-center mt-35">
+                    <AnimatedText 
+                        text="Run your freelance business like a pro" 
+                        className="hero-head text-[68px] leading-[88px] font-semibold text-center"
+                        delayOffset={0.2}
+                    />
+                    <AnimatedText 
+                        text="All-in-one platform for managing cliens, projects, and payments without the chaos. From first contract to final invoice, we've got your back." 
+                        className="hero-content text-[20px] font-normal text-center text-slate-600 w-[75%] mt-4"
+                        delayOffset={0.2}
+                    />
+                    <motion.div 
+                        className="hero-button mt-10"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.2, delay: 0.2 }}
+                    >
+                        <Link href={'/contact'}>
+                            <button className="text-[16px] bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mr-2">
+                                Try Dreelio free
+                            </button>
+                        </Link>
+                        <Link href={'/#features'}>
+                            <button className="text-[16px] px-6 py-3 rounded-full bg-gray-100/20 font-medium cursor-pointer">
+                                See features
+                            </button>
+                        </Link>
+                    </motion.div>
+                    
+                    <HeroImage />
+                </div>
+            </div>
+        </>
+    );
+};
