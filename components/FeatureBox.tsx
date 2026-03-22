@@ -1,5 +1,8 @@
-import React from 'react';
+"use client";
+
+import React, { useRef } from 'react';
 import Link from 'next/link';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 interface FeatureItem {
     icon: string;
@@ -25,10 +28,23 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
     imageSrc,
     reverse = false,
 }) => {
+    const containerRef = useRef<HTMLDivElement>(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start end", "center center"]
+    });
+
+    const imageY = useTransform(scrollYProgress, [0, 1], [100, 0]);
+
     const leftBlock = (
-        <div className="bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1] rounded-3xl">
+        <div ref={containerRef} className="bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1] rounded-3xl overflow-hidden">
             <div className="h-[650px] w-[100%] p-10">
-                <img src={imageSrc} className="h-[100%] w-[100%]" alt={head} />
+                <motion.img 
+                    src={imageSrc} 
+                    className="h-[100%] w-[100%]" 
+                    alt={head} 
+                    style={{ y: imageY }}
+                />
             </div>
         </div>
     );

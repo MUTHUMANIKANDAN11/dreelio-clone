@@ -7,7 +7,6 @@ import { PricingCard } from '../components/PricingCard';
 import SingleBlog from '@/components/SingleBlog';
 import BlogList from '@/components/BlogList';
 import Community from '@/components/Community';
-import Link from 'next/link';
 import { HeroSection } from '../components/HeroSection';
 import { Hero3Image } from '../components/Hero3Image';
 
