@@ -80,16 +80,13 @@ export default function Home() {
             <PricingCard
               title="Dreelio Premium"
               price="$189/mo"
+              annuallyPrice="$189/mo"
+              monthlyPrice="$87/mo"
               description="For pro use with light needs."
               features={["Everything in Basic", "Invoices & payments", "Expense tracking", "Income tracking", "Scheduling"]}
               buttonText="Get started"
               isPremium={true}
-              topContent={
-                <div className="buttons flex justify-between rounded-full p-1.5 bg-[#F2EFEC]">
-                  <button className="text-[14px] text-black bg-white font-semibold rounded-full px-8 py-2 cursor-pointer mr-2">Annually</button>
-                  <button className="text-[14px] px-8 py-2 rounded-full font-semibold font-medium cursor-pointer">Monthly</button>
-                </div>
-              }
+              hasToggle={true}
             />
             <PricingCard
               title="Dreelio Enterprise"
