@@ -2,14 +2,14 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import Community from "@/components/Community";
 import Testimonial from "@/components/Testimonial";
+import { CloudImages } from "@/components/CloudImages";
 
 export default function Home() {
   return (
     <main className="flex items-center flex-col overflow-x-hidden overflow-y-hidden bg-[linear-gradient(to_bottom,_white_30%,_#F4F1EE_50%,_#C4DCF4_100%)]">
       <Header />
 
-      <img src="./images/cloud1.png" className="w-[400px] h-[250px] bg-fit absolute top-40 left-[-200px]" alt="" />
-      <img src="./images/cloud2.png" className="w-[400px] h-[250px] bg-fit absolute top-40 right-[-200px]" alt="" />
+      <CloudImages />
 
       <div className="hero w-[100vw] h-[100vh] flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1]">
         <div className="w-[940px] flex flex-col items-center mt-35">

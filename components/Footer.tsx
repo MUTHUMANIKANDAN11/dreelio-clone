@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 interface FooterProps {
     className?: string;
@@ -16,8 +19,24 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
             </Link>
           </div>
 
-          <img src="./images/cloud1.png" className="w-[400px] h-[250px] bg-fit absolute top-10 left-[-200px]" alt="" />
-          <img src="./images/cloud2.png" className="w-[400px] h-[250px] bg-fit absolute top-10 right-[-200px]" alt="" />
+          <motion.img 
+            initial={{ x: -100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.1 }}
+            src="./images/cloud1.png" 
+            className="w-[400px] h-[250px] bg-fit absolute top-10 left-[-200px] pointer-events-none z-10" 
+            alt="cloud left" 
+          />
+          <motion.img 
+            initial={{ x: 100, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            viewport={{ once: false, amount: 0.1 }}
+            src="./images/cloud2.png" 
+            className="w-[400px] h-[250px] bg-fit absolute top-10 right-[-200px] pointer-events-none z-10" 
+            alt="cloud right" 
+          />
 
           <div className="foot-content w-[970px] flex flex-col items-center justify-start mt-30 bg-white/20 rounded-3xl">
             <div className="footer-content w-[900px] h-[250px] flex justify-between mt-10 border-b border-black/30">
