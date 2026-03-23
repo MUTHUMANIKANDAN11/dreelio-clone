@@ -51,7 +51,7 @@ export const HeroSection = () => {
             <CloudImages />
 
             <div className="hero w-[100vw] h-[110vh] flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1] bg-red-500">
-                <div className="hero-content h-[100vw] w-[940px] flex flex-col items-center mt-35">
+                <div className="hero-content w-[940px] flex flex-col items-center mt-35">
                     <AnimatedText 
                         text="Run your freelance business like a pro" 
                         className="hero-head text-[68px] leading-[88px] font-semibold text-center"

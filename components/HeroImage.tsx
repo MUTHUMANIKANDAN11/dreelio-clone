@@ -1,39 +1,31 @@
 "use client";
 
-import { motion, useScroll, useTransform, useSpring } from "framer-motion";
+import { useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export const HeroImage = () => {
+    const [entryDone, setEntryDone] = useState(false);
     const { scrollY } = useScroll();
 
-    const rotateXRaw = useTransform(scrollY, [0, 300], [10, 0]);
-    const scaleRaw = useTransform(scrollY, [0, 300], [0.85, 1]);
-    const opacityRaw = useTransform(scrollY, [0, 300], [0.9, 1]);
-
-    const rotateX = useSpring(rotateXRaw, { stiffness: 60, damping: 15 });
-    const scale = useSpring(scaleRaw, { stiffness: 60, damping: 15 });
-    const opacity = useSpring(opacityRaw, { stiffness: 60, damping: 15 });
+    const scrollRotateX = useTransform(scrollY, [0, 500], [8, 0]);
+    const scrollScale = useTransform(scrollY, [0, 500], [0.95, 1.05]);
 
     return (
-        <div className="hero-img mt-20" style={{ perspective: "1600px" }}>
-            <motion.div
-                initial={{ rotateX: 20, y: -30, z: -50, opacity: 0 }}
-                animate={{ rotateX: 0, y: 0, z: 0, opacity: 1 }}
-                transition={{ duration: 1.4, ease: "easeOut", delay: 0.8 }}
-                style={{ transformStyle: "preserve-3d" }}
-            >   
-                <motion.img
-                    src="./images/hero.png"
-                    className="rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] w-full"
-                    alt="Dashbord Hero"
-                    style={{
-                        rotateX,
-                        scale,
-                        opacity,
-                        transformOrigin: "top center",
-                        willChange: "transform, opacity"
-                    }}
-                />
-            </motion.div>
+        <div className="hero-img mt-20" style={{ perspective: "1200px" }}>
+            <motion.img
+                src="/images/hero.png"
+                className="rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] w-full"
+                alt="Dashboard Hero"
+                initial={{ y: 60, opacity: 0, rotateX: 16, scale: 0.9 }}
+                animate={{ y: 0, opacity: 1, rotateX: 8, scale: 0.95 }}
+                transition={{ duration: 1.2, ease: [0.25, 0.1, 0.25, 1], delay: 0.6 }}
+                onAnimationComplete={() => setEntryDone(true)}
+                style={{
+                    ...(entryDone ? { rotateX: scrollRotateX, scale: scrollScale } : {}),
+                    transformOrigin: "top center",
+                    willChange: "transform",
+                }}
+            />
         </div>
     );
 };
