@@ -56,9 +56,31 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             </Link>
             <div className="hamburger-btn cursor-pointer pr-3" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                    <motion.line 
+                        x1="3" y1="6" x2="21" y2="6"
+                        animate={{ 
+                            x1: isMobileMenuOpen ? 5 : 3, 
+                            y1: isMobileMenuOpen ? 5 : 6, 
+                            x2: isMobileMenuOpen ? 19 : 21, 
+                            y2: isMobileMenuOpen ? 19 : 6 
+                        }} 
+                        transition={{ duration: 0.3, ease: "easeInOut" }} 
+                    />
+                    <motion.line 
+                        x1="3" y1="12" x2="21" y2="12"
+                        animate={{ opacity: isMobileMenuOpen ? 0 : 1 }} 
+                        transition={{ duration: 0.3, ease: "easeInOut" }} 
+                    />
+                    <motion.line 
+                        x1="3" y1="18" x2="21" y2="18"
+                        animate={{ 
+                            x1: isMobileMenuOpen ? 5 : 3, 
+                            y1: isMobileMenuOpen ? 19 : 18, 
+                            x2: isMobileMenuOpen ? 19 : 21, 
+                            y2: isMobileMenuOpen ? 5 : 18 
+                        }} 
+                        transition={{ duration: 0.3, ease: "easeInOut" }} 
+                    />
                 </svg>
             </div>
         </motion.div>
@@ -66,14 +88,14 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
         {/* Mobile Menu Dropdown */}
         {isMobileMenuOpen && (
             <div className="mobile-menu-dropdown fixed top-[80px] left-0 w-full px-4 z-[1008]">
-                <div className="flex flex-col justify-center items-center bg-white/30 backdrop-blur-md rounded-3xl shadow-xl p-4 border gap-2 border-black/5">
-                    <Link href="/#features" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-900 w-[100%] h-[35px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Features</Link>
-                    <Link href="/#benefits" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-900 w-[100%] h-[35px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Benefits</Link>
-                    <Link href="/#pricing" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-900 w-[100%] h-[35px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Pricing</Link>
-                    <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-900 w-[100%] h-[35px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Blog</Link>
-                    <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-[14px] font-medium text-slate-900 w-[100%] h-[35px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Contact Us</Link>
+                <div className="flex flex-col justify-center items-center bg-white/40 backdrop-blur-md rounded-3xl shadow-xl p-4 border gap-2 border-black/5">
+                    <Link href="/#features" onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-medium text-slate-900 w-[100%] h-[40px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Features</Link>
+                    <Link href="/#benefits" onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-medium text-slate-900 w-[100%] h-[40px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Benefits</Link>
+                    <Link href="/#pricing" onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-medium text-slate-900 w-[100%] h-[40px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Pricing</Link>
+                    <Link href="/blogs" onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-medium text-slate-900 w-[100%] h-[40px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Blog</Link>
+                    <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-medium text-slate-900 w-[100%] h-[40px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Contact Us</Link>
                     <Link href="/contact" className="w-[100%]" onClick={() => setIsMobileMenuOpen(false)}>
-                        <AnimatedButton className="w-full text-[14px] bg-black text-white font-semibold leading-[19px] rounded-full px-6 py-4 cursor-pointer text-center flex justify-center mt-4">
+                        <AnimatedButton className="w-full text-[14px] bg-black text-white font-semibold leading-[19px] rounded-full px-6 py-4 cursor-pointer text-center flex justify-center mt-6">
                             Try Dreelio free
                         </AnimatedButton>
                     </Link>
