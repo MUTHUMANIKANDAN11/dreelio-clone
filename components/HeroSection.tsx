@@ -50,8 +50,8 @@ export const HeroSection = () => {
         <>
             <CloudImages />
 
-            <div className="hero w-[100vw] h-[110vh] flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1]">
-                <div className="h-[100vh] w-[940px] flex flex-col items-center mt-35">
+            <div className="hero w-[100vw] h-[110vh] flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1] bg-red-500">
+                <div className="hero-content h-[100vw] w-[940px] flex flex-col items-center mt-35">
                     <AnimatedText 
                         text="Run your freelance business like a pro" 
                         className="hero-head text-[68px] leading-[88px] font-semibold text-center"
@@ -59,7 +59,7 @@ export const HeroSection = () => {
                     />
                     <AnimatedText 
                         text="All-in-one platform for managing cliens, projects, and payments without the chaos. From first contract to final invoice, we've got your back." 
-                        className="hero-content text-[20px] font-normal text-center text-slate-600 w-[75%] mt-4"
+                        className="hero-content-text text-[20px] font-normal text-center text-[#453F3D] w-[75%] mt-4"
                         delayOffset={0.2}
                     />
                     <motion.div 

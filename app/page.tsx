@@ -13,7 +13,7 @@ import { Hero6Section } from '../components/Hero6Section';
 
 export default function Home() {
   return (
-    <main className="flex items-center flex-col overflow-x-hidden overflow-y-hidden">
+    <main className="main flex items-center flex-col overflow-x-hidden overflow-y-hidden relative">
       <Header />
 
       <HeroSection />

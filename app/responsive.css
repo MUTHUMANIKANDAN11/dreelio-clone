@@ -1,0 +1,335 @@
+
+.hamburger-btn { display: none; }
+.mobile-menu-dropdown { display: none; }
+
+@media (max-width: 1024px) {
+    body, html, main {
+        overflow-x: hidden !important;
+        width: 100vw !important;
+        max-width: 100% !important;
+    }
+
+    div[class*="w-[1000px]"],
+    div[class*="w-[970px]"],
+    div[class*="w-[940px]"],
+    div[class*="w-[900px]"],
+    div[class*="w-[800px]"],
+    div[class*="w-[750px]"],
+    div[class*="w-[720px]"],
+    div[class*="w-[700px]"],
+    div[class*="w-[600px]"],
+    div[class*="w-[500px]"],
+    div[class*="w-[470px]"],
+    div[class*="w-[450px]"],
+    div[class*="w-[400px]"],
+    div[class*="w-[390px]"],
+    div[class*="w-[370px]"],
+    div[class*="w-[345px]"],
+    div[class*="w-[320px]"],
+    div[class*="w-[55vw]"],
+    div[class*="w-[75%]"],
+    .hero9-footer,
+    .footer-content,
+    .foot-content,
+    .hero8-head,
+    .hero9-head {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+    div[class*="h-[100vh]"],
+    div[class*="h-[110vh]"],
+    div[class*="h-[115vh]"],
+    div[class*="h-[750px]"],
+    div[class*="h-[650px]"],
+    div[class*="h-[510px]"],
+    div[class*="h-[250px]"],
+    div[class*="h-[1150px]"],
+    .hero,
+    .hero3,
+    .hero6,
+    .hero8,
+    .hero9,
+    .footer {
+        height: auto !important;
+        min-height: auto !important;
+        padding-bottom: 60px !important;
+        padding-top: 40px !important;
+    }
+
+    /* Header */
+    .header {
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        height: 60px !important;
+        width: 95% !important;
+        max-width: 95% !important;
+        padding: 15px 15px !important;
+        flex-wrap: nowrap !important;
+        justify-content: space-between !important;
+    }
+    
+    .header-middle, .header-right {
+        display: none !important; 
+    }
+    
+    .hamburger-btn {
+        display: block !important;
+    }
+    
+    .mobile-menu-dropdown {
+        display: block !important;
+    }
+
+    .header-left {
+        font-size: 20px !important;
+        font-weight: 500 !important;
+    }
+
+    /* Font Sizes for mobile scaling */
+    div[class*="text-[68px]"],
+    div[class*="text-[64px]"],
+    .hero-head {
+        font-size: 40px !important;
+        line-height: 48px !important;
+    }
+
+    div[class*="text-[48px]"],
+    div[class*="text-[46px]"],
+    .hero8-head,
+    .hero9-head,
+    .footer-head {
+        font-size: 32px !important;
+        line-height: 40px !important;
+    }
+
+    div[class*="text-[20px]"],
+    div[class*="text-[18px]"] {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+
+    /* Convert horizontal layouts to vertical column stack */
+    .hero6-content,
+    .hero6-footer,
+    .hero8-content,
+    .hero9-content,
+    .hero9-footer,
+    .footer-content,
+    .footer-bottom-right,
+    .foot-content,
+    .row1,
+    .feature-box-container {
+        flex-direction: column !important;
+        gap: 20px !important;
+        align-items: center !important;
+        height: auto !important;
+    }
+
+    /* Remove specific flex spacing that breaks columns */
+    .hero6-content-right, .mt-5, .ml-5 {
+        margin-left: 0 !important;
+    }
+
+    /* Hero Buttons */
+    .hero-button {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 0 20px;
+        align-items: center !important;
+    }
+    .hero-button a {
+        width: 100%;
+    }
+    .hero-button button {
+        width: 100%;
+        margin: 0 !important;
+    }
+
+    /* Image adjustments */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+
+    /* Adjust clouds for mobile instead of hiding */
+    img[class*="cloud"],
+    .pointer-events-none[src*="cloud"] {
+        display: block !important;
+        width: 200px !important;
+        height: auto !important;
+    }
+    
+    .cloud-left, .pointer-events-none[alt="cloud left"] {
+        left: -80px !important;
+    }
+    
+    .cloud-right, .pointer-events-none[alt="cloud right"] {
+        right: -80px !important;
+    }
+
+    /* Footer layout resets */
+    .footer-content-left {
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-bottom-right {
+        gap: 30px !important;
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .footer-footer {
+        flex-direction: column;
+        height: auto !important;
+        padding: 20px 0;
+        gap: 15px;
+    }
+
+    /* Feature Box Adjustments */
+    .feature-box-container > div {
+        width: 100% !important;
+        margin: 0 !important;
+        height: auto !important;
+        text-align: center;
+    }
+    .feature-box-container .grid {
+        justify-content: center;
+    }
+
+    /* Pricing card resets */
+    .hero8-price-card, div[class*="w-[390px]"] {
+        width: 100% !important;
+        max-width: 400px !important;
+        margin: 0 auto;
+    }
+
+    /* Make padding uniform for outer blocks */
+    .hero3, .hero8, .hero9 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Blog cards width adjust */
+    .hero9-footer > div {
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    
+    /* Device toggles for Hero3 */
+    .hero3-images {
+        height: 400px !important; /* Shorter for mobile */
+    }
+    .hero3-images .buttons {
+        width: 90% !important;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero3-images .buttons button {
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+        padding: 10px !important;
+    }
+}
+
+/* Mobile Small (Max width 768px) */
+@media (max-width: 768px) {
+    /* Shrink margins dynamically for mobile screens */
+    .mt-40, .mt-35, .mt-30, .mt-20 {
+        margin-top: 40px !important;
+    }
+
+    .hero-content{
+        height: 65vh !important;
+        z-index: 1000;
+    }
+
+    .hero2-content{
+        gap: 30px !important;
+        overflow: auto !important;
+        scrollbar-width: none !important;
+        -ms-overflow-style: none !important;
+    }
+
+    .header{
+        background-color: rgba(255, 255, 255, 0.3);
+        backdrop-filter: blur(10px);
+        height: 60px !important;
+        top: 15px !important;
+    }
+
+    /* Buttons flex column on small screens */
+    .footer-btn {
+        flex-direction: column;
+        width: 100%;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    
+    .footer-btn a, .footer-btn button {
+        width: 100% !important;
+    }
+
+    .hero{
+        width: 100%;
+        background-color: lightgreen;
+    }
+
+    div[class*="text-[68px]"],
+    div[class*="text-[64px]"],
+    .hero-head {
+        margin-top: 50px !important;
+        font-size: 30px !important;
+        font-size: 38px !important;
+        line-height: 42px !important;
+        font-weight: 500;
+    }
+
+    .cloud-left, .pointer-events-none[alt="cloud left"] {
+        position: absolute;
+        width: 350px !important;
+        left: -300px !important;
+        top: 170px;
+    }
+
+    .cloud-right, .pointer-events-none[alt="cloud right"] {
+        position: absolute;
+        width: 350px !important;
+        right: -300px !important;
+        top: 170px;
+    }
+
+    .hero-img{
+        width: 370px;
+        height: 100%;
+        max-width: 500px;
+        padding-top: 30px;
+    }
+
+    div[class*="text-[48px]"],
+    div[class*="text-[46px]"],
+    .hero8-head,
+    .hero9-head,
+    .footer-head {
+        font-size: 28px !important;
+        line-height: 36px !important;
+    }
+
+    /* Pricing Card and Feature box details */
+    .feature-box-container .grid button {
+        width: 100% !important;
+    }
+
+    .hero-content-text{
+        font-size: 16px !important;
+    }
+}

@@ -19,6 +19,7 @@ export const metadata: Metadata = {
 
 import localFont from 'next/font/local';
 import './globals.css';
+import './responsive.css';
 
 // 1. Configure the local font
 const openRunde = localFont({

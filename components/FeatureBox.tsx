@@ -76,7 +76,7 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
     );
 
     return (
-        <div className="w-[100vw] h-[100%] flex items-center justify-center mt-30">
+        <div className="feature-box-container w-[100vw] h-[100%] flex items-center justify-center mt-30">
             {reverse ? (
                 <>
                     {rightBlock}
