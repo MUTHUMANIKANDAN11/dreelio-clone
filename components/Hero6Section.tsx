@@ -26,10 +26,10 @@ export const Hero6Section = () => {
 
     const renderToolsList = (tools: number[]) => (
         <>
-            {tools.map((t, i) => <img key={`a-${i}`} src={`./tool${t}.svg`} alt="" className="h-[70px] w-auto" />)}
-            {tools.map((t, i) => <img key={`b-${i}`} src={`./tool${t}.svg`} alt="" className="h-[70px] w-auto" />)}
-            {tools.map((t, i) => <img key={`c-${i}`} src={`./tool${t}.svg`} alt="" className="h-[70px] w-auto" />)}
-            {tools.map((t, i) => <img key={`d-${i}`} src={`./tool${t}.svg`} alt="" className="h-[70px] w-auto" />)}
+            {tools.map((t, i) => <img key={`a-${i}`} src={`./tool${t}.svg`} alt="" className="h-[72px] w-auto" />)}
+            {tools.map((t, i) => <img key={`b-${i}`} src={`./tool${t}.svg`} alt="" className="h-[72px] w-auto" />)}
+            {tools.map((t, i) => <img key={`c-${i}`} src={`./tool${t}.svg`} alt="" className="h-[72px] w-auto" />)}
+            {tools.map((t, i) => <img key={`d-${i}`} src={`./tool${t}.svg`} alt="" className="h-[72px] w-auto" />)}
         </>
     );
 
@@ -55,14 +55,19 @@ export const Hero6Section = () => {
             <div className="hero6-content-right ml-5 w-[500px] bg-[#F0EAE5] h-[510px] rounded-3xl p-10 overflow-hidden flex flex-col justify-between">
               <div>
                 <div className="hero6-content-right-head text-[24px] font-semibold">Integrates seamlessly with the tools you already use</div>
-                <motion.div className="hero6-content-right-content mt-10 w-full overflow-hidden" style={{ y: contentY }}>
-                  <motion.div className="hero6-right-top flex gap-2 w-max" style={{ x: xForward }}>
-                    {renderToolsList(toolsForward)}
+                <div className='h-[100%]' style={{
+                    maskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
+                    WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
+                 }}>
+                  <motion.div className="hero6-content-right-content mt-10 w-full overflow-hidden" style={{ y: contentY }}>
+                    <motion.div className="hero6-right-top flex gap-2 w-max" style={{ x: xForward }}>
+                      {renderToolsList(toolsForward)}
+                    </motion.div>
+                    <motion.div className="hero6-right-bottom flex gap-2 w-max mt-5" style={{ x: xBackward }}>
+                      {renderToolsList(toolsBackward)}
+                    </motion.div>
                   </motion.div>
-                  <motion.div className="hero6-right-bottom flex gap-2 w-max mt-5" style={{ x: xBackward }}>
-                    {renderToolsList(toolsBackward)}
-                  </motion.div>
-                </motion.div>
+                </div>
               </div>
               <div className="hero6-content-right-footer text-[16px] text-[#453F3D] mt-20">
                 <span className="font-semibold">Seamless integrations.</span>

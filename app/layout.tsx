@@ -51,9 +51,9 @@ export default function RootLayout({
 }) {
   return (
     // 3. Inject the variable into the HTML tag
-    <html lang="en" className={`${openRunde.variable}`}>
+    <html lang="en" className={`${openRunde.variable}`} suppressHydrationWarning>
       {/* 4. Apply the Tailwind font-sans class to the body */}
-      <body className="font-sans bg-slate-50 text-slate-800 antialiased">
+      <body className="font-sans bg-slate-50 text-slate-800 antialiased relative" suppressHydrationWarning>
         {children}
       </body>
     </html>

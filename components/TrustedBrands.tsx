@@ -22,15 +22,15 @@ export const TrustedBrands: React.FC<TrustedBrandsProps> = ({
             <div className={`hero2-head text-[14px] font-400 text-[#757170] ${titleClassName}`}>
                 Trusted by 7,000+ top startups, freelancers and studios
             </div>
-            <div className="hero2-content w-full mt-7 overflow-hidden relative"
+            <div className="hero2-content w-[800px] mt-7 overflow-hidden relative"
                 style={{
                     maskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
                     WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
                 }}
             >
-                <div className="flex items-center gap-16 animate-scroll-left w-max">
+                <div className="flex items-center gap-10 animate-scroll-left w-[1000px]">
                     {[...brands, ...brands, ...brands, ...brands].map((src, i) => (
-                        <img key={i} src={src} alt="" className="h-6 shrink-0" />
+                        <img key={i} src={src} alt="" className="h-4 shrink-0" />
                     ))}
                 </div>
             </div>

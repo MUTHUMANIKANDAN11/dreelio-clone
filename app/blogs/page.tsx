@@ -6,7 +6,7 @@ import { CloudImages } from "@/components/CloudImages";
 
 export default function Home() {
     return (
-        <main className="flex items-center flex-col overflow-x-hidden overflow-y-hidden  bg-[linear-gradient(to_bottom,_white_30%,_#F4F1EE_50%,_#C4DCF4_100%)]">
+        <main className="flex items-center flex-col overflow-x-hidden overflow-y-hidden  bg-[linear-gradient(to_bottom,_white_30%,_#F4F1EE_50%,_#C4DCF4_100%)] relative">
             <Header />
             <CloudImages />
 
