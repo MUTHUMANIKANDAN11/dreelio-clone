@@ -866,4 +866,38 @@
     }
 
     /* blog page responsive - end */
+
+    /* contact page responsive - start */
+
+    .contact-hero{
+        height: auto !important;
+        padding-bottom: 40px !important;
+    }
+
+    .contact-hero-body{
+        padding-top: 50px;
+        padding-inline: 25px;
+    }
+    
+    .contact-hero-badge {
+        font-size: 12px;
+        height: auto !important;
+    }
+    
+    div.contact-hero-head {
+        font-size: 40px !important;
+        line-height: 48px !important;
+        font-weight: 500 !important;
+        margin-top: 15px !important;
+    }
+
+    .contact-hero-content {
+        margin-top: 20px;
+    }
+
+    .contact-form{
+        width: 90%;
+    }
+
+    /* contact page responsive - end */
 }
