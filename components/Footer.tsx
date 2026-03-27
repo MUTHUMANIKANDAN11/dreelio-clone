@@ -26,7 +26,7 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.1 }}
             src="./images/cloud1.png" 
-            className="w-[400px] h-[250px] bg-fit absolute top-10 left-[-200px] pointer-events-none z-10" 
+            className="footer-cloud-left w-[400px] h-[250px] bg-fit absolute top-10 left-[-200px] pointer-events-none z-10" 
             alt="cloud left" 
           />
           <motion.img 
@@ -35,7 +35,7 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.1 }}
             src="./images/cloud2.png" 
-            className="w-[400px] h-[250px] bg-fit absolute top-10 right-[-200px] pointer-events-none z-10" 
+            className="footer-cloud-right w-[400px] h-[250px] bg-fit absolute top-10 right-[-200px] pointer-events-none z-10" 
             alt="cloud right" 
           />
 

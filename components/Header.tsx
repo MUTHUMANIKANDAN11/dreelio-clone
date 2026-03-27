@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     return (
         <>
         <motion.div 
-            className={`header flex justify-between items-center fixed top-[20px] left-1/2 -translate-x-1/2 p-1.5 rounded-full transition-all duration-300 z-1009 ${
+            className={`header flex justify-between items-center fixed top-[20px] left-1/2 -translate-x-1/2 p-1.5 rounded-full transition-all duration-50 z-1009 ${
               scrolled ? 'bg-white/30 backdrop-blur-md shadow-sm' : 'bg-transparent shadow-none'
             } ${className}`}
             initial={false}
