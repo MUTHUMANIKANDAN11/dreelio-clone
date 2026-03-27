@@ -744,6 +744,8 @@
         width: 100% !important;
     }
 
+    /* footer responsive - start */
+
     .footer {
         width: 100vw !important;
         height: 600px !important;
@@ -833,4 +835,35 @@
         z-index: 10 !important;
         transform: none !important;
     }
+
+    /* footer responsive - end */
+
+    /* blog page responsive - start */
+
+    .blog-hero-body{
+        padding-top: 50px;
+    }
+    
+    .blog-hero-badge {
+        font-size: 12px;
+        height: auto !important;
+    }
+    
+    div.blog-hero-head {
+        font-size: 40px !important;
+        line-height: 48px !important;
+        font-weight: 500 !important;
+        width: 90%;
+        margin-top: 15px !important;
+    }
+
+    .blog-hero-content {
+        margin-top: 20px;
+    }
+
+    .blog-page-list{
+        margin-inline: 20px;
+    }
+
+    /* blog page responsive - end */
 }
