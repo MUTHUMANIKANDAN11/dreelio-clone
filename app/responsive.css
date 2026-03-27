@@ -299,7 +299,7 @@
         top: 20px !important;
     }
 
-    .header-icon{
+    .header-icon {
         margin-left: 5px;
     }
 
@@ -499,7 +499,7 @@
     .hero6-content-right,
     .hero6-footer .footer-card {
         flex-shrink: 0 !important;
-        width: 85vw !important;
+        width: 100% !important;
         max-width: 350px !important;
         margin-left: 0 !important;
         margin-right: 20px !important;
@@ -610,12 +610,12 @@
         padding-inline: 40px !important;
     }
 
-    .price-card-head{
+    .price-card-head {
         font-size: 26px !important;
         margin-top: 0px !important;
     }
 
-    .price-card-content{
+    .price-card-content {
         margin-top: 7px !important;
     }
 
@@ -659,7 +659,7 @@
         border-radius: 0 0 24px 24px !important;
     }
 
-    .hero9-content-right .card-tag{
+    .hero9-content-right .card-tag {
         font-size: 12px !important;
         padding: 5px 10px !important;
     }
@@ -670,7 +670,7 @@
         line-height: 36px !important;
         margin-top: 15px !important;
     }
-    
+
     .hero9-content-right img {
         height: 50px !important;
         width: 50px !important;
@@ -679,15 +679,15 @@
         flex-shrink: 0 !important;
     }
 
-    .blog-card-content{
+    .blog-card-content {
         margin-top: 0px !important;
     }
 
-    .card-footer{
+    .card-footer {
         margin-block: 10px !important;
     }
 
-    .hero9-footer{
+    .hero9-footer {
         margin-top: 30px !important;
     }
 
@@ -716,46 +716,46 @@
         box-sizing: border-box !important;
         gap: 20px !important;
     }
-    
+
     .content-card {
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
     }
 
-    .content-card-head{
+    .content-card-head {
         padding-inline: 10px !important;
     }
 
-    .content-card-content{
+    .content-card-content {
         padding-inline: 8px !important;
     }
 
-    .content-card-content-body{
+    .content-card-content-body {
         padding-right: 5px;
     }
 
-    .content-card-footer{
+    .content-card-footer {
         margin-top: 20px !important;
         width: 100% !important;
     }
 
-    .content-card-footer button{
+    .content-card-footer button {
         width: 100% !important;
     }
 
-    .footer{
+    .footer {
         width: 100vw !important;
         height: 600px !important;
         margin-top: 0px !important;
     }
 
-    .footer-subhead{
+    .footer-subhead {
         text-align: center !important;
         width: 80% !important;
     }
 
-    .footer .footer-content-main{
+    .footer .footer-content-main {
         width: 90% !important;
         padding: 0px !important;
         margin-top: 70px !important;
@@ -775,19 +775,19 @@
         margin: 0;
     }
 
-    .footer-content-left-content-body{
+    .footer-content-left-content-body {
         text-align: start !important;
         margin-bottom: 10px !important;
         width: 90%;
     }
 
-    .footer .footer-content-left-content-head{
+    .footer .footer-content-left-content-head {
         font-size: 22px !important;
         line-height: 25px !important;
         text-align: start !important;
     }
 
-    .footer-pages-section{
+    .footer-pages-section {
         text-align: start;
     }
 
@@ -797,23 +797,24 @@
         margin-top: 20px !important;
     }
 
-    .footer-pages, .footer-info{
+    .footer-pages,
+    .footer-info {
         text-align: start;
     }
 
-    .footer-footer{
+    .footer-footer {
         margin-top: 40px !important;
     }
 
-    .footer-left{
+    .footer-left {
         font-size: 15px !important;
     }
 
-    .footer-right{
+    .footer-right {
         font-size: 15px !important;
     }
 
-    .footer .footer-cloud-left{
+    .footer .footer-cloud-left {
         width: auto !important;
         height: 150px !important;
         top: 0px !important;
@@ -823,7 +824,7 @@
         transform: none !important;
     }
 
-    .footer .footer-cloud-right{
+    .footer .footer-cloud-right {
         width: auto !important;
         height: 150px !important;
         top: 0px !important;
