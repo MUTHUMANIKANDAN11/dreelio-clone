@@ -25,7 +25,7 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.1 }}
-            src="./images/cloud1.png" 
+            src="/images/cloud1.png" 
             className="footer-cloud-left w-[400px] h-[250px] bg-fit absolute top-10 left-[-200px] pointer-events-none z-10" 
             alt="cloud left" 
           />
@@ -34,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
             whileInView={{ x: 0, opacity: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.1 }}
-            src="./images/cloud2.png" 
+            src="/images/cloud2.png" 
             className="footer-cloud-right w-[400px] h-[250px] bg-fit absolute top-10 right-[-200px] pointer-events-none z-10" 
             alt="cloud right" 
           />
@@ -43,14 +43,14 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
             <div className="footer-content w-[900px] h-[250px] flex justify-between mt-10">
               <div className="footer-content-left flex flex-col gap-5">
                 <div className="footer-content-left-head flex items-center gap-2">
-                  <img src="./icon1.svg" className="h-[30px] w-[30px] object-cover rounded-2xl" alt="" />
+                  <img src="/icon1.svg" className="h-[30px] w-[30px] object-cover rounded-2xl" alt="" />
                   <div className="footer-content-left-content-head text-[20px] font-semibold">Dreelio</div>
                 </div>
                 <div className="footer-content-left-content flex flex-col">
                   <div className="footer-content-left-content-body text-[15px] text-[#453F3D] w-[250px]">Your favourite business management software. Built for early startup founders.</div>
                   <div className="follow-icons flex mt-3 gap-2">
-                    <img src="./images/linkedin.png" className="h-[40px] w-[40px] bg-black object-cover rounded-full p-2" alt="" />
-                    <img src="./images/x-logo.png" className="h-[40px] w-[40px] bg-black object-cover rounded-full p-2" alt="" />
+                    <img src="/images/linkedin.png" className="h-[40px] w-[40px] bg-black object-cover rounded-full p-2" alt="" />
+                    <img src="/images/x-logo.png" className="h-[40px] w-[40px] bg-black object-cover rounded-full p-2" alt="" />
                   </div>
                 </div>
               </div>

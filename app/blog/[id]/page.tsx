@@ -14,15 +14,15 @@ export default async function BlogDetail({ params }: { params: Promise<{ id: str
             <Header />
             <CloudImages />
 
-            <div className="hero w-[100vw] h-[100vh] flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1]">
-                <div className="w-[940px] flex flex-col items-center mt-35">
-                    <div className="hero-head text-[48px] font-[550] leading-[60px] text-center w-[600px]">{blog.title}</div>
-                    <div className="hero-content text-[20px] font-normal leading-[28px] text-center text-slate-600 w-[600px] mt-4">{blog.description}</div>
+            <div className="single-blog-main w-[100vw] h-auto flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1]">
+                <div className="single-blog-hero-body w-[940px] flex flex-col items-center mt-20">
+                    <div className="single-blog-hero-head text-[48px] font-[550] leading-[60px] text-center w-[600px] z-10">{blog.title}</div>
+                    <div className="single-blog-hero-content text-[20px] font-normal leading-[28px] text-center text-slate-600 w-[600px] mt-4 z-10">{blog.description}</div>
                 </div>
 
-                <div className="user-box flex items-center gap-4 mt-10">
+                <div className="single-blog-user-box user-box flex items-center gap-4 mt-6 z-10">
                     <div className="user-img p-[3px] bg-white rounded-full flex items-center justify-center">
-                        <img src={blog.author.avatar} alt="" className="w-[45px] h-[45px] rounded-full object-cover" />
+                        <img src={blog.author.avatar} alt="" className="user-img-size w-[45px] h-[45px] rounded-full object-cover" />
                     </div>
                     <div className="user-details flex flex-col">
                         <div className="user-name text-[16px] font-semibold">{blog.author.name}</div>
@@ -30,12 +30,12 @@ export default async function BlogDetail({ params }: { params: Promise<{ id: str
                     </div>
                 </div>
 
-                <div className="w-[750px] flex items-center justify-center mt-10 rounded-t-2xl overflow-hidden">
-                    <img src={blog.imageSrc} alt="" className="w-[100%] h-[450px] rounded-t-2xl object-cover" />
+                <div className="single-blog-hero-img-wrapper w-[750px] flex items-center justify-center mt-8 rounded-t-2xl overflow-hidden z-10">
+                    <img src={blog.imageSrc} alt="" className="single-blog-hero-img w-[100%] h-[450px] rounded-t-2xl object-cover" />
                 </div>
             </div>
 
-            <div className="content w-[750px] h-[100%] flex flex-col gap-4 p-20">
+            <div className="single-blog-content content w-[750px] h-[100%] flex flex-col gap-4 p-20 z-10">
                 {blog.content ? (
                     blog.content.map((item: any, index: number) => {
                         if (item.head) {
@@ -60,8 +60,8 @@ export default async function BlogDetail({ params }: { params: Promise<{ id: str
                 </div>
             </div>
 
-            <div className="other-blogs flex flex-col items-center justify-center mt-10">
-                <div className="head text-[40px] font-[550] leading-[60px] text-center w-[600px]">You might also like</div>
+            <div className="single-blog-other-blogs other-blogs flex flex-col items-center justify-center mt-10 z-10 w-[100vw]">
+                <div className="single-blog-other-blogs-head head text-[40px] font-[550] leading-[60px] text-center w-[600px]">You might also like</div>
                 <BlogList excludeId={blog.id} />
             </div>
 
