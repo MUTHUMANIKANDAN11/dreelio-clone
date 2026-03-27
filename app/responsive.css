@@ -842,6 +842,7 @@
 
     .blog-hero-body{
         padding-top: 50px;
+        padding-inline: 20px;
     }
     
     .blog-hero-badge {
@@ -853,7 +854,6 @@
         font-size: 40px !important;
         line-height: 48px !important;
         font-weight: 500 !important;
-        width: 90%;
         margin-top: 15px !important;
     }
 
