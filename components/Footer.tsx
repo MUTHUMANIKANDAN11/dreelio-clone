@@ -39,8 +39,8 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
             alt="cloud right" 
           />
 
-          <div className="foot-content w-[970px] flex flex-col items-center justify-start mt-30 bg-white/20 rounded-3xl">
-            <div className="footer-content w-[900px] h-[250px] flex justify-between mt-10 border-b border-black/30">
+          <div className="footer-content-main w-[970px] flex flex-col items-center justify-start mt-30 bg-white/25 rounded-3xl shadow-[0_0_5px_0_rgba(0,0,0,0.05)]">
+            <div className="footer-content w-[900px] h-[250px] flex justify-between mt-10">
               <div className="footer-content-left flex flex-col gap-5">
                 <div className="footer-content-left-head flex items-center gap-2">
                   <img src="./icon1.svg" className="h-[30px] w-[30px] object-cover rounded-2xl" alt="" />
@@ -55,9 +55,9 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
                 </div>
               </div>
               <div className="footer-bottom-right flex gap-20">
-                <div className="right-left">
+                <div className="footer-pages-section flex flex-col">
                   <div className="text-[14px] font-semibold">PAGES</div>
-                  <div className="text-[#5F6469] flex flex-col gap-4 mt-4">
+                  <div className="footer-pages text-[#5F6469] flex flex-col gap-4 mt-4">
                     <div className="text-[14px]">Home</div>
                     <div className="text-[14px]">Features</div>
                     <div className="text-[14px]">Pricing</div>
@@ -66,7 +66,7 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
                 </div>
                 <div className="right-right">
                   <div className="text-[14px] font-semibold">INFORMATION</div>
-                  <div className="text-[#5F6469] flex flex-col gap-4 mt-4">
+                  <div className="footer-info text-[#5F6469] flex flex-col gap-4 mt-4">
                     <div className="text-[14px]">Contact</div>
                     <div className="text-[14px]">Privacy</div>
                     <div className="text-[14px]">Terms of use</div>
@@ -75,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
                 </div>
               </div>
             </div>
-            <div className="footer-footer w-[900px] flex justify-between items-center h-[70px] font-[#585556]">
+            <div className="footer-footer w-[900px] flex justify-between items-center h-[70px] font-[#585556] border-t border-black/10">
               <div className="footer-left text-[14px] font-[#585556]">© 2026 Dreelio. Created by <span className="font-semibold font-[#1A1615]">Leon Chike</span></div>
               <div className="footer-right text-[14px] font-[#585556]">Built in <span className="font-semibold font-[#1A1615]">Next.js</span></div>
             </div>

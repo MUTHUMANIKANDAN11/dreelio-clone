@@ -7,15 +7,15 @@ export default function SingleBlog() {
     
     return (
         <Link href={`/blog/${blog.id}`} className="hero9-content flex items-center justify-center mt-10 group">
-            <div className="hero9-content-left w-[500px] h-[510px] rounded-l-3xl bg-white/70 p-2">
-                <div className="w-full h-full overflow-hidden rounded-3xl">
+            <div className="hero9-content-left w-[500px] h-[510px] rounded-l-3xl bg-white/70">
+                <div className="hero9-content-left-img w-full h-full overflow-hidden rounded-3xl">
                     <img src={blog.imageSrc} alt="" className="w-[100%] h-[100%] object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
                 </div>
             </div>
 
             <div className="hero9-content-right w-[500px] bg-white/70 h-[510px] rounded-r-3xl p-10 flex flex-col justify-between">
                 <div className="flex flex-col">
-                    <button className="flex items-center justify-center text-white bg-[#614A44] w-fit pt-2 pb-1 px-5 rounded-full">{blog.tag}</button>
+                    <button className="card-tag flex items-center justify-center text-white bg-[#614A44] w-fit pt-2 pb-1 px-5 rounded-full">{blog.tag}</button>
                     <div className="card-head text-[34px] font-semibold mt-8">{blog.title}</div>
                     <div className="card-content text-[16px] text-[#453F3D] mt-5">{blog.description}</div>
                 </div>

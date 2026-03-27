@@ -25,7 +25,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
     return (
         <>
         <motion.div 
-            className={`header flex justify-between items-center fixed top-[20px] left-1/2 -translate-x-1/2 z-10 p-1.5 rounded-full transition-all duration-300 z-1009 ${
+            className={`header flex justify-between items-center fixed top-[20px] left-1/2 -translate-x-1/2 p-1.5 rounded-full transition-all duration-300 z-1009 ${
               scrolled ? 'bg-white/30 backdrop-blur-md shadow-sm' : 'bg-transparent shadow-none'
             } ${className}`}
             initial={false}
@@ -35,7 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
         >
             <Link href="/" className="header-left flex text-[18px] leading-[21px] font-semibold cursor-pointer items-center">
-                <svg className='ml-3' style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24" preserveAspectRatio="none" width="100%" height="100%">
+                <svg className='ml-4 header-icon' style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24" preserveAspectRatio="none" width="100%" height="100%">
                     <use href="/icon1.svg"></use>
                 </svg>
                 <div className="ml-1">Dreelio</div>

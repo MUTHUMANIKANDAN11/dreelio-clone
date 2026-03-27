@@ -17,8 +17,8 @@ export const BlogCard: React.FC<BlogCardProps> = ({ id, imageSrc, title, tag, ta
                 <div className="card-top overflow-hidden rounded-3xl">
                     <img src={imageSrc} className="w-[320px] h-[300px] object-cover transition-transform duration-700 ease-out group-hover:scale-110" alt={title} />
                 </div>
-                <div className="card-content flex justify-between items-center mt-5 pr-3">
-                    <div className="card-left w-[70%] text-[18px] font-semibold">{title}</div>
+                <div className="card-content w-[100%] flex justify-between items-center mt-5 gap-1">
+                    <div className="card-left text-[18px] font-semibold">{title}</div>
                     <div className="card-right">
                         <AnimatedButton className={`flex items-center text-[12px] justify-center font-bold text-white pt-2 pb-1 px-3 rounded-full`} style={{ backgroundColor: tagColor }}>
                             {tag}

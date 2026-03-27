@@ -56,7 +56,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({
                 </div>
             )}
             <div className={`card-subhead text-[16px] font-semibold text-[#524C4A]`}>{title}</div>
-            <div className="card-head text-[40px] font-semibold h-[60px] overflow-hidden flex items-center relative w-full">
+            <div className="price-card-head text-[40px] font-semibold h-[60px] overflow-hidden flex items-center relative w-full">
                 <AnimatePresence mode="popLayout" initial={false} custom={billingCycle}>
                     <motion.div
                         key={billingCycle}
@@ -72,7 +72,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({
                     </motion.div>
                 </AnimatePresence>
             </div>
-            <div className="card-content text-[16px] text-[#453F3D] mt-5">{description}</div>
+            <div className="price-card-content text-[16px] text-[#453F3D] mt-5">{description}</div>
             <div className="card-list text-[16px] text-[#453F3D] mt-5">
                 <ul>
                     {features.map((feat, idx) => (

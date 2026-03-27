@@ -18,7 +18,7 @@ export default function Home() {
 
       <HeroSection />
 
-      <div className="bg-[linear-gradient(to_bottom,_white_20%,_#F4F1EE_50%,_#C6DCF4_80%)] z-1000">
+      <div className="bg-[linear-gradient(to_bottom,_white_20%,_#F4F1EE_50%,_#C6DCF4_80%)] z-1000 flex flex-col justify-center items-center">
         <TrustedBrands className="h-[300px]" titleClassName="mt-30" />
 
         <div className="hero3 w-[100vw] h-[100%] flex flex-col items-center justify-start scroll-mt-24">
@@ -66,8 +66,8 @@ export default function Home() {
         <div id="pricing" className=""></div>
         <div className="hero8 flex flex-col items-center justify-center mt-40">
           <div className="hero8-sunhead text-[16px] font-semibold text-[#757170]">PRICING</div>
-          <div className="hero8-head text-[46px] w-[390px] font-semibold text-center">Simple plans</div>
-          <div className="hero8-head text-[46px] w-[390px] font-semibold text-center">for serious work</div>
+          <div className="hero8-head-one text-[46px] w-[390px] font-semibold text-center">Simple plans</div>
+          <div className="hero8-head-two text-[46px] w-[390px] font-semibold text-center">for serious work</div>
           <div className="hero8-content flex items-end justify-center gap-5 mt-10">
             <PricingCard
               title="Dreelio Basic"
@@ -102,7 +102,7 @@ export default function Home() {
         <TrustedBrands className="h-[100px] mt-15" titleClassName="text-[#757170]" />
 
         <div className="hero9 w-[100vw] h-[1150px] flex flex-col items-center justify-start mt-20">
-          <div className="hero9-head text-[14px] font-semibold text-[#757170]">BLOG</div>
+          <div className="hero9-subhead text-[14px] font-semibold text-[#757170]">BLOG</div>
           <div className="hero9-head text-[46px] w-[470px] font-semibold text-center">Ideas to level-up your freelance game</div>
 
           <SingleBlog />

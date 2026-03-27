@@ -28,7 +28,7 @@ export const TrustedBrands: React.FC<TrustedBrandsProps> = ({
                     WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
                 }}
             >
-                <div className="flex items-center gap-10 animate-scroll-left w-[1000px]">
+                <div className="hero2-scroll-bar flex items-center gap-10 animate-scroll-left w-[1000px]">
                     {[...brands, ...brands, ...brands, ...brands].map((src, i) => (
                         <img key={i} src={src} alt="" className="h-4 shrink-0" />
                     ))}

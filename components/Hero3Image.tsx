@@ -20,21 +20,21 @@ export const Hero3Image = () => {
     const inactiveClass = "text-[16px] px-6 py-3 rounded-full font-semibold text-white bg-gray-100/20 backdrop-blur-sm border border-white/30 font-medium cursor-pointer";
 
     return (
-        <div ref={ref} className="hero3-images mt-10 w-[55vw] h-[650px] rounded-4xl overflow-hidden relative">
-            <motion.div style={{ scale, width: "100%", height: "100%" }}>
+        <div ref={ref} className="hero3-images mt-10 w-[1000px] h-[650px] rounded-4xl overflow-hidden relative">
+            <motion.div style={{ scale, width: "100%", height: "100%" }} className="hero3-image-parent" >
                 <motion.div 
-                    className="w-[200%] h-[100%] flex"
+                    className="hero3-image-child w-[200%] h-[100%] flex"
                     animate={{ x: activeDevice === "mobile" ? "0%" : "-50%" }}
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                 >
                     <img 
                         src="./images/device1.png" 
-                        className="w-[50%] h-[100%] object-cover" 
+                        className="hero3-img w-[50%] h-[100%] object-cover" 
                         alt="device1" 
                     />
                     <img 
                         src="./images/device2.png" 
-                        className="w-[50%] h-[100%] object-cover" 
+                        className="hero3-img w-[50%] h-[100%] object-cover" 
                         alt="device2" 
                     />
                 </motion.div>

@@ -43,7 +43,7 @@ export const Hero6Section = () => {
               <div>
                 <div className="hero6-content-left-head text-[24px] font-semibold">Smart, flexible, and built around your business workflow</div>
                 <motion.div className="hero6-content-left-content mt-10 w-full overflow-hidden" style={{ y: contentY }}>
-                  <img src="./hero6.svg" className="h-[170px]" alt="" />
+                  <img src="./hero6.svg" className="hero6-content-left-content-img h-[170px]" alt="" />
                 </motion.div>
               </div>
               <div className="hero6-content-left-footer text-[16px] text-[#453F3D] mt-20">
@@ -78,21 +78,21 @@ export const Hero6Section = () => {
           <div className="hero6-footer flex items-center justify-between mt-7 gap-7">
             <div className="footer-card w-[320px] h-[100%] bg-[#F0EAE5] rounded-3xl p-7">
               <div className="card-top">
-                <img src="./collaborate.svg" className="bg-white h-12 rounded-full p-3" alt="" />
+                <img src="./collaborate.svg" className="hero6-footer-img bg-white h-12 rounded-full p-3" alt="" />
               </div>
               <div className="card-head text-[18px] font-semibold mt-10">Collaborate in realtime</div>
               <div className="card-content text-[16px] text-[#453F3D] mt-5">Keep every conversation in sync use comments, messages, and project chats to stay on the same page.</div>
             </div>
             <div className="footer-card w-[320px] h-[100%] bg-[#F0EAE5] rounded-3xl p-7">
               <div className="card-top">
-                <img src="./language.svg" className="bg-white h-12 rounded-full p-3" alt="" />
+                <img src="./language.svg" className="hero6-footer-img bg-white h-12 rounded-full p-3" alt="" />
               </div>
               <div className="card-head text-[18px] font-semibold mt-10">Speaks your language</div>
               <div className="card-content text-[16px] text-[#453F3D] mt-5">Set your language, currency, time, and date preferences for a seamless experience that feels truly local.</div>
             </div>
             <div className="footer-card w-[320px] h-[100%] bg-[#F0EAE5] rounded-3xl p-7">
               <div className="card-top">
-                <img src="./view.svg" className="bg-white h-12 rounded-full p-3" alt="" />
+                <img src="./view.svg" className="hero6-footer-img bg-white h-12 rounded-full p-3" alt="" />
               </div>
               <div className="card-head text-[18px] font-semibold mt-10">View things your way</div>
               <div className="card-content text-[16px] text-[#453F3D] mt-5">Easily toggle between various views, including Kanban, cards, list, table, timeline, table, and calendar.</div>
