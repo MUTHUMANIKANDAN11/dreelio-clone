@@ -35,10 +35,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             transition={{ duration: 0.3, ease: "easeInOut" }}
         >
             <Link href="/" className="header-left flex text-[18px] leading-[21px] font-semibold cursor-pointer items-center">
-                <svg className='ml-4 header-icon' style={{ width: "24px", height: "24px" }} viewBox="0 0 24 24" preserveAspectRatio="none" width="100%" height="100%">
-                    <use href="/icon1.svg"></use>
-                </svg>
-                <div className="ml-1">Dreelio</div>
+                <img src="/icon1.svg" className="ml-4 header-icon" style={{ height: "20px", width: "auto" }} alt="AstraDial" />
             </Link>
             <div className={`header-middle w-[50%] text-[14px] flex justify-between items-center h-[100%] text-slate-800 ${scrolled ? '' : ''}`}>
                 <Link href="/#features" className="header-nav px-3"><div>Features</div></Link>
@@ -50,7 +47,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
             <Link href="/contact">
                 <div className="header-right">
                     <AnimatedButton className="text-[14px] bg-black text-white font-semibold leading-[19px] rounded-full px-6 py-4 cursor-pointer">
-                        Try Dreelio free
+                        Try AstraDial free
                     </AnimatedButton>
                 </div>
             </Link>
@@ -96,7 +93,7 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                     <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-[15px] font-medium text-slate-900 w-[100%] h-[40px] text-center flex items-center justify-center rounded-full hover:bg-white/20">Contact Us</Link>
                     <Link href="/contact" className="w-[100%]" onClick={() => setIsMobileMenuOpen(false)}>
                         <AnimatedButton className="w-full text-[14px] bg-black text-white font-semibold leading-[19px] rounded-full px-6 py-4 cursor-pointer text-center flex justify-center mt-6">
-                            Try Dreelio free
+                            Try AstraDial free
                         </AnimatedButton>
                     </Link>
                 </div>

@@ -24,7 +24,7 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
     subhead,
     head,
     content,
-    buttonText = "Try Dreelio free",
+    buttonText = "Try AstraDial free",
     features,
     imageSrc,
     reverse = false,

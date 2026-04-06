@@ -53,12 +53,12 @@ export const HeroSection = () => {
             <div className="hero w-[100vw] h-[110vh] flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1] bg-red-500">
                 <div className="hero-content w-[920px] flex flex-col items-center mt-35">
                     <AnimatedText 
-                        text="Run your freelance business like a pro" 
+                        text="Give your customer a SuperHuman support"
                         className="hero-head text-[68px] leading-[88px] font-semibold text-center"
                         delayOffset={0.2}
                     />
                     <AnimatedText 
-                        text="All-in-one platform for managing cliens, projects, and payments without the chaos. From first contract to final invoice, we've got your back." 
+                        text="All-in-one platform for enhancing customer experience, communications and remainders without the chaos. From first onboarding to followups, we've got your back." 
                         className="hero-content-text text-[20px] font-normal text-center text-[#453F3D] w-[75%] mt-4"
                         delayOffset={0.2}
                     />
@@ -70,7 +70,7 @@ export const HeroSection = () => {
                     >
                         <Link href={'/contact'}>
                             <AnimatedButton className="text-[16px] bg-black text-white font-semibold rounded-full px-6 py-3 cursor-pointer mr-2">
-                                Try Dreelio free
+                                Try AstraDial free
                             </AnimatedButton>
                         </Link>
                         <Link href={'/#features'}>

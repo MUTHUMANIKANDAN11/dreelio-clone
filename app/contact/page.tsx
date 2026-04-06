@@ -16,7 +16,7 @@ export default function Home() {
         <div className="contact-hero-body w-[940px] flex flex-col items-center mt-35">
           <div className="contact-hero-badge text-[10px] font-bold text-[#614A44] px-3 py-2 bg-[#F4F1EE] rounded-full">CONTACT US</div>
           <div className="contact-hero-head text-[64px] leading-[88px] font-semibold text-center">Let's connect</div>
-          <div className="contact-hero-content text-[18px] font-normal text-center text-slate-600 w-[400px] mt-4 z-10">Have questions about Dreelio? Contact us and we'll be happy to help.</div>
+          <div className="contact-hero-content text-[18px] font-normal text-center text-slate-600 w-[400px] mt-4 z-10">Have questions about AstraDial? Contact us and we'll be happy to help.</div>
         </div>
 
         <form action="" className="contact-form bg-white/60 flex flex-col gap-6 p-6 rounded-3xl mt-10">

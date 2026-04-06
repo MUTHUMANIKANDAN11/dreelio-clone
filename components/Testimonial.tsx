@@ -36,7 +36,7 @@ export default function Testimonial() {
 
     return (
         <div className="hero7 flex flex-col items-center justify-center mt-40 px-5 w-[100vw] overflow-hidden">
-          <div className="hero7-head text-[50px] w-[720px] max-w-full font-semibold text-center">"Dreelio is by far the best agency tool I have ever used"</div>
+          <div className="hero7-head text-[50px] w-[720px] max-w-full font-semibold text-center">"AstraDial is by far the best agency tool I have ever used"</div>
           <div className="hero7-content flex flex-col items-center justify-center mt-10">
             <div className="hero7-user-img flex">
               <img src="./images/user1.png" className="hero7-img h-[60px] w-[60px] object-cover rounded-full" alt="" />

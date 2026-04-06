@@ -11,14 +11,14 @@ export default function Community() {
               platform="X/Twitter"
               logoSrc="./images/x-logo.png"
               followers="15.2K FOLLOWERS"
-              description="Stay updated on new features and discover how others are using Dreelio."
+              description="Stay updated on new features and discover how others are using AstraDial."
               buttonText="Floow us"
             />
             <CommunityCard
               platform="YouTube"
               logoSrc="./images/youtube-logo.png"
               followers="32K SUBSCRIBERS"
-              description="Tips, tutorials, and in-depth feature guides to inspire and enhance your Dreelio workflow."
+              description="Tips, tutorials, and in-depth feature guides to inspire and enhance your AstraDial workflow."
               buttonText="Subscribe"
             />
           </div>

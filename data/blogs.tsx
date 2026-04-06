@@ -50,7 +50,7 @@ export const blogs = [
       { body: "Using this as a starting point, you consider the type of software that’s appropriate to your needs. Additionally, you can build on your answers to identify specific processes or people issues that impact your service." },
       { body: "Take your time and engage the right people – as you build your shortlist and trial each software. After all, time spent well in the early phases ensures you don’t lose money by choosing an inefficient software package." },
       { head: "The top 10 softwares for your agency includes:" },
-      { body: "1. Dreelio" },
+      { body: "1. AstraDial" },
       { body: "2. Framer" },
       { body: "3. Figma" },
       { body: "4. Contra" },
@@ -83,7 +83,7 @@ export const blogs = [
       { body: "Where should you be focusing? The focus is on hitting deliverables within the defined scope. Regular monitoring and control measures help mitigate risks and ensure successful execution and closure." },
       { head: "Project execution" },
       { body: "This phase involves carrying out tasks detailed in the work breakdown structure to achieve goals and produce deliverables." },
-      { body: "Project management software like Dreelio plays an important role in enhancing productivity and organization. It helps in setting clear goals by providing tools to define objectives and track progress. By outlining the project scope, it ensures all team members understand their roles and responsibilities." }
+      { body: "Project management software like AstraDial plays an important role in enhancing productivity and organization. It helps in setting clear goals by providing tools to define objectives and track progress. By outlining the project scope, it ensures all team members understand their roles and responsibilities." }
     ]
   },
   {
@@ -106,7 +106,7 @@ export const blogs = [
       { body: "Using a billable hours tracker isn’t just good practice but it’s essential. It ensures every hour billed is accounted for, maintaining transparency and keeping you in the clear with your clients. Examples includes:" },
       { body: "1. Client meetings" },
       { body: "2. Project executions" },
-      { body: "This is why we recommend using Freelio which is an all in one tool for your agency." }
+      { body: "This is why we recommend using AstraDial which is an all in one tool for your agency." }
     ]
   }
 ];

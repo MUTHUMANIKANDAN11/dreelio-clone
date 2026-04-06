@@ -36,7 +36,7 @@ export const Hero6Section = () => {
     return (
         <div ref={containerRef} className="hero6 w-[100vw] h-[100%] flex flex-col items-center justify-center mt-30">
           <div className="hero6-subhead text-[14px] font-bold text-[#614A44]">FEATURES</div>
-          <div className="hero6-head text-[48px] leading-[62px] w-[700px] font-semibold mt-5 text-center">Build for freelancers, powered by simplicity</div>
+          <div className="hero6-head text-[48px] leading-[62px] w-[700px] font-semibold mt-5 text-center">Build for Businesses, powered by simplicity</div>
 
           <div className="hero6-content flex items-center justify-center mt-10">
             <div className="hero6-content-left w-[500px] bg-[#F0EAE5] h-[510px] rounded-3xl p-10 overflow-hidden flex flex-col justify-between">
@@ -48,7 +48,7 @@ export const Hero6Section = () => {
               </div>
               <div className="hero6-content-left-footer text-[16px] text-[#453F3D] mt-20">
                 <span className="font-semibold">Personalize every detail</span>
-                , From branding and interface layout to colors and menus, so Dreelio feels like an extension of your brand.
+                , From branding and interface layout to colors and menus, so AstraDial feels like an extension of your brand.
               </div>
             </div>
 
@@ -71,7 +71,7 @@ export const Hero6Section = () => {
               </div>
               <div className="hero6-content-right-footer text-[16px] text-[#453F3D] mt-20">
                 <span className="font-semibold">Seamless integrations.</span>
-                Plug Dreelio into the tools you love. Set up automations, sync your data, and make your systems work smarter together.
+                Plug AstraDial into the tools you love. Set up automations, sync your data, and make your systems work smarter together.
               </div>
             </div>
           </div>
@@ -80,22 +80,22 @@ export const Hero6Section = () => {
               <div className="card-top">
                 <img src="./collaborate.svg" className="hero6-footer-img bg-white h-12 rounded-full p-3" alt="" />
               </div>
-              <div className="card-head text-[18px] font-semibold mt-10">Collaborate in realtime</div>
-              <div className="card-content text-[16px] text-[#453F3D] mt-5">Keep every conversation in sync use comments, messages, and project chats to stay on the same page.</div>
+              <div className="card-head text-[18px] font-semibold mt-10">No more server maintance cost</div>
+              <div className="card-content text-[16px] text-[#453F3D] mt-5">Replace Physical PRI and SIP trunk into cloud trunk. Focus on customer, we take care of technology</div>
             </div>
             <div className="footer-card w-[320px] h-[100%] bg-[#F0EAE5] rounded-3xl p-7">
               <div className="card-top">
                 <img src="./language.svg" className="hero6-footer-img bg-white h-12 rounded-full p-3" alt="" />
               </div>
-              <div className="card-head text-[18px] font-semibold mt-10">Speaks your language</div>
-              <div className="card-content text-[16px] text-[#453F3D] mt-5">Set your language, currency, time, and date preferences for a seamless experience that feels truly local.</div>
+              <div className="card-head text-[18px] font-semibold mt-10">Onboard Greetings and remainders</div>
+              <div className="card-content text-[16px] text-[#453F3D] mt-5">Send onboarding greeting via WhatsApp, reminder calls on time and request callback immediatly</div>
             </div>
             <div className="footer-card w-[320px] h-[100%] bg-[#F0EAE5] rounded-3xl p-7">
               <div className="card-top">
                 <img src="./view.svg" className="hero6-footer-img bg-white h-12 rounded-full p-3" alt="" />
               </div>
-              <div className="card-head text-[18px] font-semibold mt-10">View things your way</div>
-              <div className="card-content text-[16px] text-[#453F3D] mt-5">Easily toggle between various views, including Kanban, cards, list, table, timeline, table, and calendar.</div>
+              <div className="card-head text-[18px] font-semibold mt-10">Get Verified</div>
+              <div className="card-content text-[16px] text-[#453F3D] mt-5">We provide SPAM protection support on trucaller, airtel, jio</div>
             </div>
           </div>
         </div>

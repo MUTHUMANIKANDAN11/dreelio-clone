@@ -20,7 +20,7 @@ export const TrustedBrands: React.FC<TrustedBrandsProps> = ({
     return (
         <div className={`hero2 w-[100vw] flex flex-col items-center justify-start ${className}`}>
             <div className={`hero2-head text-[14px] font-400 text-[#757170] ${titleClassName}`}>
-                Trusted by 7,000+ top startups, freelancers and studios
+                Trusted by 50+ companies, hotels and hospitals
             </div>
             <div className="hero2-content w-[800px] mt-7 overflow-hidden relative"
                 style={{
