@@ -777,6 +777,10 @@
         margin: 0;
     }
 
+    .footer-logo {
+        height: 18px !important;
+    }
+
     .footer-content-left-content-body {
         text-align: start !important;
         margin-bottom: 10px !important;
@@ -985,4 +989,175 @@
     }
 
     /* single blog page responsive - end */
+
+    /* privacy policy page responsive - start */
+
+    .privacy-main {
+        height: auto !important;
+    }
+
+    .privacy-hero-body {
+        width: 100% !important;
+        padding-inline: 10px;
+        padding-top: 20px;
+        box-sizing: border-box !important;
+        margin-top: 60px !important;
+    }
+
+    div.privacy-hero-head {
+        font-size: 40px !important;
+        font-weight: 600 !important;
+        width: 100% !important;
+        padding-inline: 10px;
+        margin-top: 30px;
+        box-sizing: border-box !important;
+    }
+
+    div.privacy-hero-content {
+        font-size: 16px !important;
+        line-height: 24px !important;
+        width: 100% !important;
+        margin-top: 15px !important;
+        padding-inline: 10px;
+        box-sizing: border-box !important;
+    }
+
+    .privacy-hero-img-wrapper {
+        padding-inline: 10px;
+        margin-top: 40px !important;
+    }
+
+    .privacy-hero-img {
+        height: 350px !important;
+    }
+
+    .privacy-content {
+        width: 100% !important;
+        padding: 15px !important;
+        margin-top: 40px;
+        box-sizing: border-box !important;
+    }
+
+    .privacy-content .content-head {
+        font-size: 22px !important;
+        line-height: 28px !important;
+        margin-top: 20px !important;
+    }
+
+    .privacy-content .content-body {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+
+    /* privacy policy page responsive - end */
+
+    /* terms of use page responsive - start */
+
+    .terms-main {
+        height: auto !important;
+    }
+
+    .terms-hero-body {
+        width: 100% !important;
+        padding-inline: 10px;
+        padding-top: 20px;
+        box-sizing: border-box !important;
+        margin-top: 60px !important;
+    }
+
+    div.terms-hero-head {
+        font-size: 40px !important;
+        font-weight: 600 !important;
+        width: 100% !important;
+        padding-inline: 10px;
+        margin-top: 30px;
+        box-sizing: border-box !important;
+    }
+
+    div.terms-hero-content {
+        font-size: 16px !important;
+        line-height: 24px !important;
+        width: 100% !important;
+        margin-top: 15px !important;
+        padding-inline: 10px;
+        box-sizing: border-box !important;
+    }
+
+    .terms-hero-img-wrapper {
+        padding-inline: 10px;
+        margin-top: 40px !important;
+    }
+
+    .terms-hero-img {
+        height: 350px !important;
+    }
+
+    .terms-content {
+        width: 100% !important;
+        padding: 15px !important;
+        margin-top: 40px;
+        box-sizing: border-box !important;
+    }
+
+    .terms-content .content-head {
+        font-size: 22px !important;
+        line-height: 28px !important;
+        margin-top: 20px !important;
+    }
+
+    .terms-content .content-body {
+        font-size: 16px !important;
+        line-height: 24px !important;
+    }
+
+    /* terms of use page responsive - end */
+
+    /* not found page responsive - start */
+
+    .not-found-main {
+        height: auto !important;
+    }
+
+    .not-found-hero-badge {
+        font-size: 12px !important;
+        height: auto !important;
+    }
+
+    .not-found-hero-body {
+        width: 100% !important;
+        padding-inline: 10px;
+        padding-top: 30px;
+        box-sizing: border-box !important;
+        margin-top: 160px !important;
+        margin-bottom: 300px !important;
+    }
+
+    div.not-found-hero-head {
+        font-size: 28px !important;
+        font-weight: 600 !important;
+        width: 250px !important;
+        line-height: 35px !important;
+        padding-inline: 10px;
+        margin-top: 30px;
+        box-sizing: border-box !important;
+    }
+
+    div.not-found-hero-content {
+        font-size: 16px !important;
+        line-height: 24px !important;
+        width: 100% !important;
+        margin-top: 15px !important;
+        padding-inline: 10px;
+        box-sizing: border-box !important;
+    }
+
+    .not-found-btn {
+        padding-inline: 20px !important;
+        padding-block: 10px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        opacity: 0.7 !important;
+    }
+
+    /* not found page responsive - end */
 }
