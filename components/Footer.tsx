@@ -57,19 +57,19 @@ export const Footer: React.FC<FooterProps> = ({  }) => {
                 <div className="footer-pages-section flex flex-col">
                   <div className="text-[14px] font-semibold">PAGES</div>
                   <div className="footer-pages text-[#5F6469] flex flex-col gap-4 mt-4">
-                    <div className="text-[14px]">Home</div>
-                    <div className="text-[14px]">Features</div>
-                    <div className="text-[14px]">Pricing</div>
-                    <div className="text-[14px]">Blog</div>
+                    <div className="text-[14px]"><Link href={'/'}>Home</Link></div>
+                    <div className="text-[14px]"><Link href={'/features'}>Features</Link></div>
+                    <div className="text-[14px]"><Link href={'/pricing'}>Pricing</Link></div>
+                    <div className="text-[14px]"><Link href={'/blog'}>Blog</Link></div>
                   </div>
                 </div>
                 <div className="right-right">
                   <div className="text-[14px] font-semibold">INFORMATION</div>
                   <div className="footer-info text-[#5F6469] flex flex-col gap-4 mt-4">
-                    <div className="text-[14px]">Contact</div>
-                    <div className="text-[14px]">Privacy</div>
-                    <div className="text-[14px]">Terms of use</div>
-                    <div className="text-[14px]">404</div>
+                    <div className="text-[14px]"><Link href={'/contact'}>Contact</Link></div>
+                    <div className="text-[14px]"><Link href={'/privacypolicy'}>Privacy</Link></div>
+                    <div className="text-[14px]"><Link href={'/termsofuse'}>Terms of use</Link></div>
+                    <div className="text-[14px]"><Link href={'/notfound'}>404</Link></div>
                   </div>
                 </div>
               </div>
