@@ -75,22 +75,22 @@ export const Hero6Section = () => {
               </div>
             </div>
           </div>
-          <div className="hero6-footer flex items-center justify-between mt-7 gap-7">
-            <div className="footer-card w-[320px] h-[100%] bg-[#F0EAE5] rounded-3xl p-7">
+          <div className="hero6-footer flex items-stretch justify-between mt-7 gap-7">
+            <div className="footer-card w-[320px] bg-[#F0EAE5] rounded-3xl p-7">
               <div className="card-top">
                 <img src="./collaborate.svg" className="hero6-footer-img bg-white h-12 rounded-full p-3" alt="" />
               </div>
               <div className="card-head text-[18px] font-semibold mt-10">No more server maintance cost</div>
               <div className="card-content text-[16px] text-[#453F3D] mt-5">Replace Physical PRI and SIP trunk into cloud trunk. Focus on customer, we take care of technology</div>
             </div>
-            <div className="footer-card w-[320px] h-[100%] bg-[#F0EAE5] rounded-3xl p-7">
+            <div className="footer-card w-[320px] bg-[#F0EAE5] rounded-3xl p-7">
               <div className="card-top">
                 <img src="./language.svg" className="hero6-footer-img bg-white h-12 rounded-full p-3" alt="" />
               </div>
               <div className="card-head text-[18px] font-semibold mt-10">Onboard Greetings and remainders</div>
               <div className="card-content text-[16px] text-[#453F3D] mt-5">Send onboarding greeting via WhatsApp, reminder calls on time and request callback immediatly</div>
             </div>
-            <div className="footer-card w-[320px] h-[100%] bg-[#F0EAE5] rounded-3xl p-7">
+            <div className="footer-card w-[320px] bg-[#F0EAE5] rounded-3xl p-7">
               <div className="card-top">
                 <img src="./view.svg" className="hero6-footer-img bg-white h-12 rounded-full p-3" alt="" />
               </div>

@@ -7,9 +7,9 @@ export default function SingleBlog() {
     
     return (
         <Link href={`/blog/${blog.id}`} className="hero9-content flex items-center justify-center mt-10 group">
-            <div className="hero9-content-left w-[500px] h-[510px] rounded-l-3xl bg-white/70">
+            <div className="hero9-content-left w-[500px] h-[510px] rounded-l-3xl bg-white/70 p-2">
                 <div className="hero9-content-left-img w-full h-full overflow-hidden rounded-3xl">
-                    <img src={blog.imageSrc} alt="" className="w-[100%] h-[100%] object-cover transition-transform duration-700 ease-out group-hover:scale-110" />
+                    <img src={blog.imageSrc} alt="" className="w-[100%] h-[100%] object-cover transition-transform duration-700 ease-out group-hover:scale-110 rounded-2xl" />
                 </div>
             </div>
 

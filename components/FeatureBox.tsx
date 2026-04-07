@@ -53,7 +53,7 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
     const rightBlock = (
         <div className={`feature-box-content-block h-[650px] w-[370px] flex flex-col justify-between ${reverse ? 'mr-15' : 'ml-15'}`}>
             <div>
-                <div className="text-[14px] font-bold text-[#614A44]">{subhead}</div>
+                <div className="feature-box-subhead text-[14px] font-bold text-[#614A44]">{subhead}</div>
                 <div className="feature-box-head text-[48px] leading-[62px] font-semibold mt-5">{head}</div>
                 <div className="feature-box-content text-[16px] leading-[26px] mt-5 text-[#453F3D]">{content}</div>
                 {buttonText && (
@@ -64,9 +64,9 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
                     </Link>
                 )}
             </div>
-            <div className="feature-box-features grid grid-cols-2 gap-4">
+            <div className="feature-box-features grid grid-cols-2 gap-3">
                 {features.map((feature, idx) => (
-                    <button key={idx} className="text-[15px] py-2 rounded-full border border-gray-200 text-[#453F3D] font-medium flex justify-center items-center w-[170px]">
+                    <button key={idx} className="feature-box-feature-btn text-[15px] py-2 rounded-full border border-gray-200 text-[#453F3D] font-medium flex justify-center items-center w-[175px]">
                         <img src={feature.icon} className="mr-2" alt={feature.text} />
                         {feature.text}
                     </button>
