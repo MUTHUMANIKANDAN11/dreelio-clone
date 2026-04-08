@@ -38,7 +38,6 @@ export const testimonials = testimonialsRaw.map((t) => {
   };
 });
 
-// Featured testimonial user
 const featuredUser = getUserById("user_1");
 export const featuredTestimonial = {
   quote: '"AstraDial is by far the best agency tool I have ever used"',

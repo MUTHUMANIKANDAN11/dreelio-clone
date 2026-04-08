@@ -1,3 +1,8 @@
+// Static user data for client-side consumption
+// Server-side code should use lib/data.ts directly
+
+import usersJson from "./users.json";
+
 export interface User {
   id: string;
   name: string;
@@ -5,59 +10,7 @@ export interface User {
   avatar: string;
 }
 
-export const users: User[] = [
-  // Blog authors
-  {
-    id: "author_1",
-    name: "Deepak Sharma",
-    role: "Senior Software Engineer, TechVista Labs",
-    avatar: "/blogImages/profiles/author_1.png",
-  },
-  {
-    id: "author_2",
-    name: "Ananya Iyer",
-    role: "Telecom Analyst, CloudConnect India",
-    avatar: "/blogImages/profiles/author_2.png",
-  },
-  {
-    id: "author_3",
-    name: "Rohan Krishnan",
-    role: "Full Stack Developer, PixelForge Studios",
-    avatar: "/blogImages/profiles/author_3.png",
-  },
-  // Testimonial featured user
-  {
-    id: "user_1",
-    name: "Martha Punla",
-    role: "VP Marketing, Meta",
-    avatar: "/blogImages/profiles/user_1.png",
-  },
-  // Testimonial users
-  {
-    id: "user_2",
-    name: "Ravi Menon",
-    role: "General Manager, The Palms Resort",
-    avatar: "/blogImages/profiles/user_2.png",
-  },
-  {
-    id: "user_3",
-    name: "Divya Krishnan",
-    role: "Operations Head, Meditrina Hospital",
-    avatar: "/blogImages/profiles/user_3.png",
-  },
-  {
-    id: "user_4",
-    name: "Suresh Nair",
-    role: "Front Office Manager, Grand Estancia",
-    avatar: "/blogImages/profiles/user_4.png",
-  },
-  {
-    id: "user_5",
-    name: "Dr. Anjali Rao",
-    role: "Admin Director, Sunrise Clinics",
-    avatar: "/blogImages/profiles/user_5.png",
-  },
-];
+export const users: User[] = usersJson as User[];
 
 export function getUserById(id: string): User | undefined {
   return users.find((u) => u.id === id);
