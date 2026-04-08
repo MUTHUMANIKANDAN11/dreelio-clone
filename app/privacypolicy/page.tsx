@@ -12,7 +12,7 @@ export default function Home() {
       <div className="privacy-hero w-[100vw] h-[100%] flex items-center flex-col bg-gradient-to-b from-[#9FC2E6] to-[#ECDFD1]">
         <div className="privacy-hero-body w-[940px] flex flex-col items-center mt-35">
           <div className="privacy-hero-head text-[64px] leading-[88px] font-semibold text-center">Privacy Policy</div>
-          <div className="privacy-hero-content text-[18px] font-normal text-center text-slate-600 w-[400px] mt-4 mb-15 z-10">Last updated: Septempber 2025</div>
+          <div className="privacy-hero-content text-[18px] font-normal text-center text-slate-600 w-[400px] mt-4 mb-15 z-10">Last updated: April 2026</div>
         </div>
       </div>
 

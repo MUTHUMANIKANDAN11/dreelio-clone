@@ -2,6 +2,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { TestimonialCard } from "./TestimonialCard";
+import { testimonials, featuredTestimonial } from '@/data/testimonials';
 
 export default function Testimonial() {
     const scrollRef = useRef<HTMLDivElement>(null);
@@ -34,20 +35,38 @@ export default function Testimonial() {
         }
     };
 
+    const handleMouseEnter = () => {
+        if (scrollRef.current) {
+            const animations = scrollRef.current.getAnimations();
+            animations.forEach(anim => {
+                anim.playbackRate = 0.5;
+            });
+        }
+    };
+
+    const handleMouseLeave = () => {
+        if (scrollRef.current) {
+            const animations = scrollRef.current.getAnimations();
+            animations.forEach(anim => {
+                anim.playbackRate = 1;
+            });
+        }
+    };
+
     return (
         <div className="hero7 flex flex-col items-center justify-center mt-40 px-5 w-[100vw] overflow-hidden">
-          <div className="hero7-head text-[50px] w-[720px] max-w-full font-semibold text-center">"AstraDial is by far the best agency tool I have ever used"</div>
+          <div className="hero7-head text-[50px] w-[720px] max-w-full font-semibold text-center">{featuredTestimonial.quote}</div>
           <div className="hero7-content flex flex-col items-center justify-center mt-10">
             <div className="hero7-user-img flex">
-              <img src="./images/user1.png" className="hero7-img h-[60px] w-[60px] object-cover rounded-full" alt="" />
+              <img src={featuredTestimonial.imageSrc} className="hero7-img h-[60px] w-[60px] object-cover rounded-full" alt={featuredTestimonial.userName} />
             </div>
             <div className="hero7-user-content flex flex-col items-center justify-center mt-5">
-              <div className="hero7-user-name text-[18px] font-semibold">Martha punla</div>
-              <div className="hero7-user-role text-[14px] text-[#757170]">VP Marketing, Meta</div>
+              <div className="hero7-user-name text-[18px] font-semibold">{featuredTestimonial.userName}</div>
+              <div className="hero7-user-role text-[14px] text-[#757170]">{featuredTestimonial.userRole}</div>
             </div>
           </div>
           
-          <div className="relative w-full max-w-[1200px] mt-10 flex justify-center">
+          <div className="relative w-full max-w-[1200px] mt-10 flex justify-center md:block md:overflow-hidden md:[mask-image:linear-gradient(to_right,transparent_0%,black_15%,black_85%,transparent_100%)] md:[-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_15%,black_85%,transparent_100%)]">
             {canScrollLeft && (
                 <button 
                     onClick={slideLeft} 
@@ -59,36 +78,24 @@ export default function Testimonial() {
                 </button>
             )}
 
-            <div 
-                ref={scrollRef} 
-                onScroll={checkScroll} 
-                className="hero7-footer flex md:justify-center gap-5 overflow-x-auto md:overflow-x-visible w-full snap-x md:snap-none snap-mandatory pb-5 px-[7.5vw] md:px-0"
+            <div
+                ref={scrollRef}
+                onScroll={checkScroll}
+                className="hero7-footer flex md:justify-start gap-5 md:gap-0 overflow-x-auto w-[80vw] md:w-max snap-x snap-mandatory pb-5 px-[7.5vw] md:px-0 overflow-hidden md:animate-[scroll-left_40s_linear_infinite]"
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
             >
-              <div className="snap-center shrink-0 flex justify-center w-[85vw] md:w-auto">
-                <TestimonialCard
-                  content="&quot;As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.&quot;"
-                  imageSrc="./images/user2.png"
-                  userName="Leah Daniel"
-                  userRole="Design Ops lead, teamwork"
-                />
-              </div>
-              <div className="snap-center shrink-0 flex justify-center w-[85vw] md:w-auto">
-                <TestimonialCard
-                  content="&quot;As a fast-moving design team, we needed a tool that matched our pace. From client onboarding to getting paid, this just works clean, fast, and beautifully built.&quot;"
-                  imageSrc="./images/user3.png"
-                  userName="Sergio Walker"
-                  userRole="Agency Owner"
-                />
-              </div>
-              <div className="snap-center shrink-0 flex justify-center w-[85vw] md:w-auto">
-                <TestimonialCard
-                  content="&quot;We used to duct-tape tools together. Now our contracts, time tracking, and payments live in one clean system. It's everything a small team needs to stay pro.&quot;"
-                  imageSrc="./images/user4.png"
-                  userName="Jane Jay Jay"
-                  userRole="Project Manager, Google"
-                />
-              </div>
+              {[...testimonials, ...testimonials].map((t, idx) => (
+                <div key={idx} className={`snap-center shrink-0 flex justify-center w-[85vw] md:w-auto md:mr-5 ${idx >= testimonials.length ? 'max-md:hidden' : ''}`}>
+                  <TestimonialCard
+                    content={t.content}
+                    imageSrc={t.imageSrc}
+                    userName={t.userName}
+                    userRole={t.userRole}
+                  />
+                </div>
+              ))}
             </div>
 
             {canScrollRight && (

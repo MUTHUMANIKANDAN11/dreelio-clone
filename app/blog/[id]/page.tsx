@@ -30,20 +30,36 @@ export default async function BlogDetail({ params }: { params: Promise<{ id: str
                     </div>
                 </div>
 
-                <div className="single-blog-hero-img-wrapper w-[750px] flex items-center justify-center mt-8 rounded-t-2xl overflow-hidden z-10">
+                <div className="single-blog-hero-img-wrapper relative w-[750px] flex items-center justify-center mt-8 rounded-t-2xl overflow-hidden z-10">
                     <img src={blog.imageSrc} alt="" className="single-blog-hero-img w-[100%] h-[450px] rounded-t-2xl object-cover" />
+                    <div 
+                        className="absolute top-6 right-6 flex items-center text-[12px] justify-center font-bold text-white pt-1 pb-1 px-5 rounded-full shadow-md" 
+                        style={{ backgroundColor: blog.tagColor }}
+                    >
+                        {blog.tag}
+                    </div>
                 </div>
             </div>
 
             <div className="single-blog-content content w-[750px] h-[100%] flex flex-col gap-4 p-20 z-10">
                 {blog.content ? (
                     blog.content.map((item: any, index: number) => {
-                        if (item.head) {
-                            return <div key={index} className="content-head text-[26px] font-bold mt-10">{item.head}</div>;
-                        } else if (item.body) {
-                            return <div key={index} className="content-body text-[16px] font-normal text-[#453F3D]">{item.body}</div>;
+                        switch (item.type) {
+                            case "head":
+                                return <div key={index} className="content-head text-[26px] font-bold mt-10">{item.value}</div>;
+                            case "subhead":
+                                return <div key={index} className="content-subhead text-[20px] font-semibold mt-6 text-[#2A2524]">{item.value}</div>;
+                            case "body":
+                                return <div key={index} className="content-body text-[16px] font-normal text-[#453F3D]">{item.value}</div>;
+                            case "image":
+                                return (
+                                    <div key={index} className="content-img-wrapper w-full mt-6 mb-2 rounded-2xl overflow-hidden">
+                                        <img src={item.value} alt="" className="w-full h-auto object-cover rounded-2xl" />
+                                    </div>
+                                );
+                            default:
+                                return null;
                         }
-                        return null;
                     })
                 ) : (
                     <div className="content-body text-[16px] font-normal text-[#453F3D] text-center p-20 border border-dashed border-gray-300 rounded-2xl">

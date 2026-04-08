@@ -36,7 +36,7 @@ export const Hero6Section = () => {
     return (
         <div ref={containerRef} className="hero6 w-[100vw] h-[100%] flex flex-col items-center justify-center mt-30">
           <div className="hero6-subhead text-[14px] font-bold text-[#614A44]">FEATURES</div>
-          <div className="hero6-head text-[48px] leading-[62px] w-[700px] font-semibold mt-5 text-center">Build for Businesses, powered by simplicity</div>
+          <div className="hero6-head text-[48px] leading-[62px] w-[700px] font-semibold mt-5 text-center">Built for any business that runs on calls</div>
 
           <div className="hero6-content flex items-center justify-center mt-10">
             <div className="hero6-content-left w-[500px] bg-[#F0EAE5] h-[510px] rounded-3xl p-10 overflow-hidden flex flex-col justify-between">
@@ -70,8 +70,8 @@ export const Hero6Section = () => {
                 </div>
               </div>
               <div className="hero6-content-right-footer text-[16px] text-[#453F3D] mt-20">
-                <span className="font-semibold">Seamless integrations.</span>
-                Plug AstraDial into the tools you love. Set up automations, sync your data, and make your systems work smarter together.
+                <span className="font-semibold">Seamless integrations</span>
+                . Plug AstraDial into the tools you love. Set up automations, sync your data, and make your systems work smarter together.
               </div>
             </div>
           </div>

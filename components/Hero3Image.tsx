@@ -6,7 +6,7 @@ import { AnimatedButton } from "@/components/AnimatedButton";
 
 export const Hero3Image = () => {
     const ref = useRef(null);
-    const [activeDevice, setActiveDevice] = useState<"mobile" | "web">("mobile");
+    const [activeDevice, setActiveDevice] = useState<"mobile" | "web"> ("mobile");
 
     const { scrollYProgress } = useScroll({
         target: ref,
@@ -25,7 +25,7 @@ export const Hero3Image = () => {
                 <motion.div 
                     className="hero3-image-child w-[200%] h-[100%] flex"
                     animate={{ x: activeDevice === "mobile" ? "0%" : "-50%" }}
-                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                 >
                     <img 
                         src="./images/device1.png" 
@@ -40,17 +40,17 @@ export const Hero3Image = () => {
                 </motion.div>
             </motion.div>
             <div className="buttons absolute bottom-10 left-[50%] translate-x-[-50%] bg-gray-100/20 backdrop-blur-sm border border-white/30 rounded-full p-1.5 flex gap-2 transition-all">
-                <AnimatedButton 
+                <AnimatedButton
                     onClick={() => setActiveDevice("mobile")}
                     className={activeDevice === "mobile" ? activeClass : inactiveClass}
                 >
-                    Mobile App
+                    Tickets
                 </AnimatedButton>
                 <AnimatedButton 
                     onClick={() => setActiveDevice("web")}
                     className={activeDevice === "web" ? activeClass : inactiveClass}
                 >
-                    Web App
+                    Queues
                 </AnimatedButton>
             </div>
         </div>

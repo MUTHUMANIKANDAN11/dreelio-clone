@@ -22,8 +22,8 @@ export default function Home() {
         <TrustedBrands className="h-[300px]" titleClassName="mt-30" />
 
         <div className="hero3 w-[100vw] h-[100%] flex flex-col items-center justify-start scroll-mt-24">
-          <div className="hero3-subhead text-[14px] font-bold mt-20 text-[#614A44]">SEAMLESS ACROSS DEVICES</div>
-          <div className="hero3-head text-[48px] leading-[62px] font-semibold text-center w-[600px] mt-5">Connect from phone, stay in sync</div>
+          <div className="hero3-subhead text-[14px] font-bold mt-20 text-[#614A44]">TICKETS & QUEUES</div>
+          <div className="hero3-head text-[48px] leading-[62px] font-semibold text-center w-[600px] mt-5">No call slips through, no customer left waiting</div>
 
           <Hero3Image />
         </div>
@@ -31,25 +31,25 @@ export default function Home() {
         <div id="features" className=""></div>
         <FeatureBox
           subhead="TEAM MANAGEMENT"
-          head="Connect all your teammates"
-          content={<><span className="font-semibold">Support, departments and ticketing</span> - all in one place. Let AI pick the call if your team is super busy and help close tickets</>}
+          head="Never miss what happened on a call."
+          content={<><span className="font-semibold">Full call history, live call monitoring, and direction filters</span> Track who called, when, how long it lasted, which direction it went (inbound, outbound, or internal) and the status of every call, all without digging through logs.</>}
           features={[
-            { icon: "./task.svg", text: "Tickets" },
-            { icon: "./clock.svg", text: "AI powered IVR" },
-            { icon: "./sheet.svg", text: "Departments" },
-            { icon: "./docs.svg", text: "Calls Recordings" },
+            { icon: "./task.svg", text: "Call History" },
+            { icon: "./clock.svg", text: "Live Calls" },
+            { icon: "./sheet.svg", text: "Directions" },
+            { icon: "./docs.svg", text: "Recordings" },
           ]}
           imageSrc="/images/hero4.png"
           reverse={false}
         />
 
         <FeatureBox
-          subhead="DEDICATED SUPPORT"
-          head="Got new feature request? Get it in 4 days"
-          content={<><span className="font-semibold">Talk to developers directly</span>, Create custom flow. No more server maintaince, everything’s automated and user-friendly.</>}
+          subhead="WORKFLOWS"
+          head="Set it once, let it run"
+          content={<><span className="font-semibold">Build a calls and message flow in exactly the way your operation works.</span> Set the order, timing, and trigger - whether it's a guest check-in call, a WhatsApp reminder, or a checkout nudge. Once it's configured, it just runs.</>}
           features={[
             { icon: "./invoice.svg", text: "Cloud SIP" },
-            { icon: "./budget.svg", text: "Call logs" },
+            { icon: "./budget.svg", text: "Call Logs" },
             { icon: "./forecasting.svg", text: "Reminder Calls" },
             { icon: "./integration.svg", text: "Integrations" },
           ]}
@@ -72,7 +72,7 @@ export default function Home() {
           <div className="hero8-content flex items-end justify-center gap-5 mt-10">
             <PricingCard
               title="AstraDial Basic"
-              price="Free Trial"
+              price="₹7,000/mo"
               description=""
               features={["Unlimited channels", "Unlimited users", "Feature Requests", "CRM"]}
               buttonText="Try AstraDial free"

@@ -42,7 +42,7 @@ export const FeatureBox: React.FC<FeatureBoxProps> = ({
             <div className="feature-box-img-wrapper h-[640px] w-[100%] p-10">
                 <motion.img
                     src={imageSrc}
-                    className="h-[100%] w-[100%]"
+                    className="h-[100%] w-[100%]  rounded-2xl"
                     alt={head}
                     style={{ y: imageY }}
                 />

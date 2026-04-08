@@ -4,7 +4,7 @@ import { blogs } from "../data/blogs"
 
 export default function SingleBlog() {
     const blog = blogs[0];
-    
+
     return (
         <Link href={`/blog/${blog.id}`} className="hero9-content flex items-center justify-center mt-10 group">
             <div className="hero9-content-left w-[500px] h-[510px] rounded-l-3xl bg-white/70 p-2">
