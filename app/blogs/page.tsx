@@ -5,6 +5,11 @@ import { Footer } from "@/components/Footer";
 import { CloudImages } from "@/components/CloudImages";
 import { isDevMode } from "@/lib/devMode";
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Blog",
+};
 
 export default function Home() {
     const devMode = isDevMode();

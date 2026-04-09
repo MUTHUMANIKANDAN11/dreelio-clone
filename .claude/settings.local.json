@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh auth:*)",
+      "Bash(gh org:*)",
+      "Bash(gh repo:*)",
+      "Bash(ls /mnt/c/Users/muthu/Desktop/next/.env*)",
+      "Bash(python3 -c \"import sys,json; data=json.load\\(sys.stdin\\); print\\([b['id'] for b in data]\\)\")",
+      "Bash(npm run:*)",
+      "Bash(node -e \"console.log\\(process.platform\\)\")",
+      "Bash(/mnt/c/Program Files/nodejs/node.exe:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}

@@ -4,6 +4,11 @@ import { Footer } from "@/components/Footer";
 import BlogForm from "@/components/BlogForm";
 import { isDevMode } from "@/lib/devMode";
 import { getBlogById, getUserByIdFromJson } from "@/lib/data";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Create Blog",
+};
 
 export default async function CreateBlogPage({
   searchParams,

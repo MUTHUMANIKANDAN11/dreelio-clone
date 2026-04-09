@@ -4,6 +4,11 @@ import Community from "@/components/Community";
 import Testimonial from "@/components/Testimonial";
 import { CloudImages } from "@/components/CloudImages";
 import { AnimatedButton } from "@/components/AnimatedButton";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+};
 
 export default function Home() {
   return (

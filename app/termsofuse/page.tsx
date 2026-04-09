@@ -1,6 +1,11 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { CloudImages } from "@/components/CloudImages";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Terms of Use",
+};
 
 export default function Home() {
   return (

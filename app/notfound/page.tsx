@@ -3,6 +3,11 @@ import { Footer } from "@/components/Footer";
 import { CloudImages } from "@/components/CloudImages";
 import Link from "next/link";
 import { AnimatedButton } from "@/components/AnimatedButton";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Page Not Found",
+};
 
 export default function Home() {
   return (

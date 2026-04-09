@@ -6,6 +6,15 @@ import { CloudImages } from "@/components/CloudImages";
 import { isDevMode } from "@/lib/devMode";
 import Link from "next/link";
 import DeleteBlogButton from "@/components/DeleteBlogButton";
+import type { Metadata } from "next";
+
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+    const { id } = await params;
+    const blog = blogs.find(b => String(b.id) === String(id)) || blogs[0];
+    return {
+        title: blog.title,
+    };
+}
 
 export function generateStaticParams() {
     return blogs.map((blog) => ({ id: String(blog.id) }));
