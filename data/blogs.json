@@ -743,5 +743,672 @@
         "value": "By combining technologies such as TypeScript, Tailwind CSS, and Framer Motion, the project achieves a balance between functionality, appearance, and developer experience."
       }
     ]
+  },
+  {
+    "id": "4",
+    "title": "Updating a Production Project Safely by Creating a Development Version",
+    "description": "From circuit-switched landlines to packet-switched internet calls — understanding the evolution that transformed business communication.",
+    "imageSrc": "/blogImages/covers/blog_4.png",
+    "authorId": "author_4",
+    "tag": "ENGINEERING",
+    "tagColor": "#1384CF",
+    "content": [
+      {
+        "type": "body",
+        "value": "When we need to update the UI of a production project, the first instinct is often to open the existing codebase, make the changes, test quickly, and deploy. But in real work, that is one of the easiest ways to create risk. A small visual update can unexpectedly affect layouts, break interactions, disturb data flow, or even interrupt live users if it is done directly on the production version."
+      },
+      {
+        "type": "body",
+        "value": "In our case, the goal was to update the UI of an existing production project without affecting the live product at all. We wanted complete freedom to redesign the interface, try new layouts, test different components, and move carefully without touching the production server or the production database. That led us to a much safer approach: creating a separate development version of the project and doing all UI work there first."
+      },
+      {
+        "type": "body",
+        "value": "This blog is based on that real experience. I want to explain not only what we did, but also why this approach was useful, how the development environment was prepared, how we handled authentication and data without using the real backend, and how this helped us redesign the UI in a practical and safe way."
+      },
+      {
+        "type": "head",
+        "value": "Why we created a separate development version"
+      },
+      {
+        "type": "body",
+        "value": "The main reason was simple: we did not want the production product to be disturbed while updating the UI."
+      },
+      {
+        "type": "body",
+        "value": "UI changes may look harmless from the outside, but in a real project they often touch many connected parts. A new layout may require different props, a component restructure may affect navigation, table rendering can change, forms can behave differently, and styles can conflict with existing logic. When all of this happens directly inside the production environment, the chances of creating unwanted side effects become high."
+      },
+      {
+        "type": "body",
+        "value": "So instead of working on the live version, we prepared a development version of the project. That allowed us to work freely, redesign screens, replace components, test flows, and even temporarily bypass some production-only logic, all without putting the real users or real data at risk."
+      },
+      {
+        "type": "body",
+        "value": "Another important decision was that we did not connect the development version to the production database or production server, because our work was focused only on the UI. For UI development, what matters most is that pages render correctly, components receive the expected data shape, and interactions behave properly. Real business data is not required in the early stage if the application can be filled with proper test data."
+      },
+      {
+        "type": "body",
+        "value": "That is where TypeScript became a very big advantage. Since the project already had typed structures, every component already knew what kind of data it expected. This made it easier to create mock data for each page and keep the UI meaningful during development."
+      },
+      {
+        "type": "head",
+        "value": "How the development setup was planned"
+      },
+      {
+        "type": "body",
+        "value": "The setup was done in a way that separated local work, repository flow, and VPS usage."
+      },
+      {
+        "type": "body",
+        "value": "We used Claude to help prepare the development version setup and structure the workflow. However, Claude could not access the VPS because it did not have the VPS credentials. So the repository preparation work such as forking, cloning, and branch setup was done locally. After that, the workflow became simple: whenever we made changes locally, we pushed them to the forked repository branch, and then pulled those changes into the VPS environment whenever we wanted to test there."
+      },
+      {
+        "type": "body",
+        "value": "This approach gave us two useful benefits. First, the code editing and Git operations stayed under our control. Second, the VPS remained only as a testing and running environment, not the main place where we write and manage all changes."
+      },
+      {
+        "type": "head",
+        "value": "VPS preparation"
+      },
+      {
+        "type": "body",
+        "value": "Before starting the actual UI work, the server environment had to be checked properly. There is no use in preparing a clean development branch if the environment where it runs is incomplete."
+      },
+      {
+        "type": "body",
+        "value": "The VPS used for this work was:"
+      },
+      {
+        "type": "code",
+        "value": "163.235.225.238 // EXAMPLE VPS IP"
+      },
+      {
+        "type": "body",
+        "value": "The first step was to verify that the required tools were already installed. We checked Node.js, npm, Git, Nginx, and Certbot. Since the project needed a process manager, PM2 was installed as well."
+      },
+      {
+        "type": "body",
+        "value": "A typical verification process looked like this:"
+      },
+      {
+        "type": "code",
+        "value": "node -v\nnpm -v\ngit --version\nnginx -v\ncertbot --version\npm2 -v"
+      },
+      {
+        "type": "body",
+        "value": "If PM2 is not installed, it can be installed with:"
+      },
+      {
+        "type": "code",
+        "value": "npm install -g pm2"
+      },
+      {
+        "type": "body",
+        "value": "This stage may look basic, but it is important. A missing tool or wrong version often creates confusion later, especially when the application runs differently on local and server environments."
+      },
+      {
+        "type": "head",
+        "value": "Repository setup for safe UI development"
+      },
+      {
+        "type": "body",
+        "value": "To avoid directly working on the original repository, we first created a fork. The original repository was forked into our GitHub account, and then the fork was cloned."
+      },
+      {
+        "type": "body",
+        "value": "The structure was like this:"
+      },
+      {
+        "type": "code",
+        "value": "Original repository: organization_name/repo_name\n\nForked repository: user_name/repo_name"
+      },
+      {
+        "type": "body",
+        "value": "A safe Git workflow started from here."
+      },
+      {
+        "type": "subhead",
+        "value": "Step 1: Fork the original repository"
+      },
+      {
+        "type": "body",
+        "value": "This was done on GitHub so that our changes would remain isolated from the original project until we were ready."
+      },
+      {
+        "type": "subhead",
+        "value": "Step 2: Clone the fork locally"
+      },
+      {
+        "type": "code",
+        "value": "git clone https://github.com/user_name/repo_name.git\ncd repo_name"
+      },
+      {
+        "type": "subhead",
+        "value": "Step 3: Create a development branch from main"
+      },
+      {
+        "type": "code",
+        "value": "git checkout main\ngit checkout -b dev\ngit push -u origin dev"
+      },
+      {
+        "type": "body",
+        "value": "This dev branch became the working branch for all UI-related changes."
+      },
+      {
+        "type": "subhead",
+        "value": "Step 4: Add the original repository as upstream"
+      },
+      {
+        "type": "code",
+        "value": "git remote add upstream https://github.com/organization_name/repo_name.git\ngit remote -v"
+      },
+      {
+        "type": "body",
+        "value": "This is useful when we want to sync changes from the original repository later without mixing them directly into our working branch."
+      },
+      {
+        "type": "head",
+        "value": "Why we did not touch the production server or production database"
+      },
+      {
+        "type": "body",
+        "value": "This was one of the most important decisions in the whole process."
+      },
+      {
+        "type": "body",
+        "value": "Our goal was to update the UI, not change live business logic or production data. If we had connected the development version directly to the real database and real services from the beginning, then even small mistakes could have affected actual data, login flow, or other user-facing features."
+      },
+      {
+        "type": "body",
+        "value": "Since the UI needs data mainly for rendering and interaction testing, we decided to use mock data instead of real backend connections in the development version. This made the development process faster, safer, and easier to control."
+      },
+      {
+        "type": "body",
+        "value": "It also gave us freedom to work even when the backend was unavailable, incomplete, or not needed for a particular page."
+      },
+      {
+        "type": "head",
+        "value": "Creating a development mode that can run without the real backend"
+      },
+      {
+        "type": "body",
+        "value": "To make the UI work independently, we introduced a development mode bypass. This was done through a few focused changes on the dev branch."
+      },
+      {
+        "type": "body",
+        "value": "The idea was not to permanently remove authentication or backend logic. The idea was only to let the app run safely in development mode without requiring real production services."
+      },
+      {
+        "type": "subhead",
+        "value": "1. Firebase bypass"
+      },
+      {
+        "type": "body",
+        "value": "The app was updated so that Firebase initialization would be skipped when the API key was only a placeholder. One practical check used was whether the key started with the real Firebase key prefix pattern or not."
+      },
+      {
+        "type": "code",
+        "value": "const firebaseApiKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;\n\nconst isRealFirebaseKey =\n  firebaseApiKey && firebaseApiKey.startsWith(\"AIza\");\n\nif (isRealFirebaseKey) {\n  // initialize Firebase\n} else {\n  console.log(\"Skipping Firebase initialization in development mode\");\n}"
+      },
+      {
+        "type": "body",
+        "value": "This kept the production behavior unchanged when real keys are present, while allowing the development version to run safely when placeholder values are used."
+      },
+      {
+        "type": "subhead",
+        "value": "2. Authentication bypass"
+      },
+      {
+        "type": "body",
+        "value": "Since we were only updating the UI, we did not need the full login flow during early development. So in development mode, the app automatically authenticated as an admin user and skipped the login page."
+      },
+      {
+        "type": "code",
+        "value": "const isDevMode = process.env.NEXT_PUBLIC_DEV_MODE === \"true\";\n\nif (isDevMode) {\nconst mockAdminUser = {\nid: \"dev-admin\",\nname: \"Development Admin\",\nrole: \"admin\",\nemail: \"admin@example.com\",\n};\n\n// set mock user into auth state, if required"
+      },
+      {
+        "type": "body",
+        "value": "This gave us direct access to the full application layout and pages without depending on Firebase auth during UI work."
+      },
+      {
+        "type": "subhead",
+        "value": "3. Mock data layer"
+      },
+      {
+        "type": "body",
+        "value": "This was one of the most useful parts of the setup."
+      },
+      {
+        "type": "body",
+        "value": "A dedicated file such as the following was created:"
+      },
+      {
+        "type": "code",
+        "value": "lib/mock/data.ts"
+      },
+      {
+        "type": "body",
+        "value": "Inside it, realistic sample data was added for all the main API clients used by the project, such as gateway, PBX, Firestore, workflow, and msg91. The purpose was not just to fill the screen randomly, but to provide structured test data that matched the types expected by the components."
+      },
+      {
+        "type": "body",
+        "value": "A simple example of mock data structure could look like this:"
+      },
+      {
+        "type": "code",
+        "value": "export const mockUsers = [\n{\nid: \"u1\",\nname: \"John Admin\",\nemail: \"john@example.com\",\nrole: \"admin\",\nstatus: \"active\",\n},\n{\nid: \"u2\",\nname: \"Sarah Manager\",\nemail: \"sarah@example.com\",\nrole: \"manager\",\nstatus: \"active\",\n},\n];"
+      },
+      {
+        "type": "body",
+        "value": "Because the project used TypeScript, components could work with this test data more reliably. The types helped ensure that the mock data followed the same structure expected by the real application. That made the development version much more useful than a blank or broken interface."
+      },
+      {
+        "type": "body",
+        "value": "As a result, all pages could render properly, and the application behaved enough like the real product for UI redesign work to continue smoothly."
+      },
+      {
+        "type": "head",
+        "value": "Local development workflow"
+      },
+      {
+        "type": "body",
+        "value": "Even though the application would be tested on the VPS, the main code editing workflow stayed on the local machine. The project was also cloned locally at:"
+      },
+      {
+        "type": "code",
+        "value": "C:\\Users\\muthu\\Desktop\\repo_name"
+      },
+      {
+        "type": "body",
+        "value": "1. The working pattern became simple:"
+      },
+      {
+        "type": "body",
+        "value": "2. Make changes locally"
+      },
+      {
+        "type": "body",
+        "value": "3. Commit the changes to the dev branch"
+      },
+      {
+        "type": "body",
+        "value": "4. Push to the forked repository"
+      },
+      {
+        "type": "body",
+        "value": "5. Pull the changes on the VPS"
+      },
+      {
+        "type": "body",
+        "value": "6. Run and verify the development version there"
+      },
+      {
+        "type": "body",
+        "value": "Typical commands looked like this:"
+      },
+      {
+        "type": "code",
+        "value": "git add .\ngit commit -m \"Update dashboard UI layout\"\ngit push origin dev"
+      },
+      {
+        "type": "body",
+        "value": "Then on the VPS:"
+      },
+      {
+        "type": "code",
+        "value": "cd /var/www/repo_name-dev\ngit pull origin dev\nnpm install\nnpm run build\npm2 restart repo_name-dev"
+      },
+      {
+        "type": "body",
+        "value": "This workflow kept development organized and prevented the VPS from becoming the main editing environment."
+      },
+      {
+        "type": "head",
+        "value": "Understanding the existing UI before changing it"
+      },
+      {
+        "type": "body",
+        "value": "Before redesigning anything, we spent time understanding the existing product UI. This is a step many people skip, but it matters a lot."
+      },
+      {
+        "type": "body",
+        "value": "A production product already has its own structure, spacing system, layout logic, repeated components, and user flow. If we redesign without understanding that, the new UI may look modern in isolated screenshots but feel disconnected when used as a full product."
+      },
+      {
+        "type": "body",
+        "value": "So before updating pages, we studied the existing interface carefully. We looked at:"
+      },
+      {
+        "type": "body",
+        "value": "1. how the layout was structured"
+      },
+      {
+        "type": "body",
+        "value": "2. which components were reused"
+      },
+      {
+        "type": "body",
+        "value": "3. how spacing and typography were handled"
+      },
+      {
+        "type": "body",
+        "value": "4. how tables, forms, cards, and navigation behaved"
+      },
+      {
+        "type": "body",
+        "value": "5. what kind of visual language the old UI already had"
+      },
+      {
+        "type": "body",
+        "value": "At the same time, we also studied our reference UI system. In this case, we planned to use shadcn/ui blocks for redesigning parts of the application. Since components.json already existed, shadcn/ui was partially set up, which made it easier to integrate blocks and new components into the existing project."
+      },
+      {
+        "type": "body",
+        "value": "This step was important because a good UI update is not just copying a beautiful design from elsewhere. It is about understanding both the current product and the target design direction, then combining them properly."
+      },
+      {
+        "type": "head",
+        "value": "Updating the UI in the development version"
+      },
+      {
+        "type": "body",
+        "value": "Once the development setup was stable and pages could render using mock data, the real UI work started."
+      },
+      {
+        "type": "body",
+        "value": "The main goal was to redesign and improve the interface using a cleaner component approach. This included areas such as:"
+      },
+      {
+        "type": "body",
+        "value": "1. dashboard layout"
+      },
+      {
+        "type": "body",
+        "value": "2. sidebar navigation"
+      },
+      {
+        "type": "body",
+        "value": "3. login page"
+      },
+      {
+        "type": "body",
+        "value": "4. data tables"
+      },
+      {
+        "type": "body",
+        "value": "5. cards and content blocks"
+      },
+      {
+        "type": "body",
+        "value": "6. page-level spacing and alignment"
+      },
+      {
+        "type": "body",
+        "value": "Since we were working in a safe development version, we could update each page gradually. We did not need to rush or fear affecting the live product."
+      },
+      {
+        "type": "body",
+        "value": "A typical process for each screen looked like this:"
+      },
+      {
+        "type": "subhead",
+        "value": "Step 1: Open the existing page and understand its structure"
+      },
+      {
+        "type": "body",
+        "value": "We first checked how the current page was built, what components it used, and what data it expected."
+      },
+      {
+        "type": "subhead",
+        "value": "Step 2: Match the page against the reference UI"
+      },
+      {
+        "type": "body",
+        "value": "We compared it with the target UI style or the shadcn block we wanted to use."
+      },
+      {
+        "type": "subhead",
+        "value": "Step 3: Replace layout and visual structure carefully"
+      },
+      {
+        "type": "body",
+        "value": "Instead of changing everything blindly, we updated container structure, spacing, alignment, sections, and reusable elements one by one."
+      },
+      {
+        "type": "subhead",
+        "value": "Step 4: Reconnect the page to the same typed data"
+      },
+      {
+        "type": "body",
+        "value": "Even though the visuals were changing, the data shape remained the same through TypeScript and mock data. This helped avoid unnecessary logic breakage."
+      },
+      {
+        "type": "subhead",
+        "value": "Step 5: Check responsiveness and interaction"
+      },
+      {
+        "type": "body",
+        "value": "After the redesign, we tested how the page behaved on different widths and whether buttons, tables, navigation, and forms still made sense visually and functionally."
+      },
+      {
+        "type": "body",
+        "value": "This process repeated for each page until the development version started feeling like a polished new interface rather than a collection of disconnected updated screens."
+      },
+      {
+        "type": "head",
+        "value": "Why test data was enough for the early UI phase"
+      },
+      {
+        "type": "body",
+        "value": "Using mock data was not just a workaround. It was actually the right tool for this phase."
+      },
+      {
+        "type": "body",
+        "value": "For UI work, the main questions are:"
+      },
+      {
+        "type": "body",
+        "value": "Does the page render correctly?"
+      },
+      {
+        "type": "body",
+        "value": "Does the layout work with actual-looking content?"
+      },
+      {
+        "type": "body",
+        "value": "Do tables, forms, badges, buttons, and cards align properly?"
+      },
+      {
+        "type": "body",
+        "value": "Does the component handle empty, filled, and edge-case states?"
+      },
+      {
+        "type": "body",
+        "value": "Does the user flow feel clear?"
+      },
+      {
+        "type": "body",
+        "value": "All of this can be tested using realistic mock data if the data shape matches the real one. Since TypeScript already defined the expected structure, creating useful test data became much easier."
+      },
+      {
+        "type": "body",
+        "value": "This allowed us to move fast in the design phase without waiting for real backend access or worrying about production safety."
+      },
+      {
+        "type": "head",
+        "value": "Testing after the UI update"
+      },
+      {
+        "type": "body",
+        "value": "Once the UI changes were completed, the next step was not deployment. The next step was full testing inside the development version."
+      },
+      {
+        "type": "body",
+        "value": "This is another part that should never be skipped. A UI may look correct in screenshots but still have many hidden issues when used like a real product."
+      },
+      {
+        "type": "body",
+        "value": "The first round of testing was done using the same mock data environment. This allowed us to verify the UI in a stable and predictable state. We checked:"
+      },
+      {
+        "type": "body",
+        "value": "all updated pages"
+      },
+      {
+        "type": "body",
+        "value": "navigation between pages"
+      },
+      {
+        "type": "body",
+        "value": "button placements"
+      },
+      {
+        "type": "body",
+        "value": "table rendering"
+      },
+      {
+        "type": "body",
+        "value": "card layouts"
+      },
+      {
+        "type": "body",
+        "value": "typography and spacing consistency"
+      },
+      {
+        "type": "body",
+        "value": "responsive behavior"
+      },
+      {
+        "type": "body",
+        "value": "empty and filled states"
+      },
+      {
+        "type": "body",
+        "value": "visual issues such as overflow, broken alignment, and inconsistent colors"
+      },
+      {
+        "type": "body",
+        "value": "After that, the next stage was to test with the real server and database, but only after the UI was already stable. This is important. If we connect real services too early, debugging becomes harder because UI issues and backend issues mix together."
+      },
+      {
+        "type": "body",
+        "value": "When connecting to real data, the goal is to verify whether the updated UI still behaves properly with actual values and live conditions. In that phase, testing should include:"
+      },
+      {
+        "type": "body",
+        "value": "whether all components render correctly with real records"
+      },
+      {
+        "type": "body",
+        "value": "whether data length variations break layouts"
+      },
+      {
+        "type": "body",
+        "value": "whether permissions and user states affect the interface correctly"
+      },
+      {
+        "type": "body",
+        "value": "whether existing features still work as expected with the new UI"
+      },
+      {
+        "type": "body",
+        "value": "whether styling holds up under real content, not just sample content"
+      },
+      {
+        "type": "body",
+        "value": "This is where many final issues appear, especially with long text, missing fields, variable counts, and live status values. So this stage is essential before considering production deployment."
+      },
+      {
+        "type": "head",
+        "value": "Moving from development to production"
+      },
+      {
+        "type": "body",
+        "value": "Only after all testing is complete and the development version is stable should the work move toward production."
+      },
+      {
+        "type": "body",
+        "value": "By this stage, the development version has already served its purpose well. It allowed us to redesign the UI safely, test step by step, and identify problems early without affecting the live product."
+      },
+      {
+        "type": "body",
+        "value": "The production move should happen only when:"
+      },
+      {
+        "type": "body",
+        "value": "the new UI is complete"
+      },
+      {
+        "type": "body",
+        "value": "all major flows are tested"
+      },
+      {
+        "type": "body",
+        "value": "mock-data testing is successful"
+      },
+      {
+        "type": "body",
+        "value": "real-data testing is successful"
+      },
+      {
+        "type": "body",
+        "value": "no serious visual or functional bugs remain"
+      },
+      {
+        "type": "body",
+        "value": "Then the final code can be reviewed, pushed properly, and merged from dev to main through the normal Git workflow."
+      },
+      {
+        "type": "body",
+        "value": "A typical merge flow may look like this:"
+      },
+      {
+        "type": "code",
+        "value": "git checkout main\ngit pull upstream main\ngit checkout dev\ngit pull origin dev\ngit checkout main\ngit merge dev\ngit push origin main"
+      },
+      {
+        "type": "body",
+        "value": "In real team workflows, this is usually done through a pull request rather than a direct merge, so that the changes can be reviewed before release."
+      },
+      {
+        "type": "body",
+        "value": "What we can take from this:"
+      },
+      {
+        "type": "body",
+        "value": "Working this way made one thing very clear, updating a production project is not just about writing better UI code. It is about creating a safe process around the work."
+      },
+      {
+        "type": "body",
+        "value": "By building a separate development version, we got a controlled environment where we could experiment, redesign, and test without fear. By avoiding the production server and database at the beginning, we reduced risk. By using TypeScript and realistic mock data, we kept the UI development meaningful. By delaying real-data integration until later testing, we kept the debugging process cleaner."
+      },
+      {
+        "type": "body",
+        "value": "Most importantly, this approach let us work with confidence. We were not guessing whether a UI change would affect live users. We knew it would not, because the work was isolated properly from the start."
+      },
+      {
+        "type": "body",
+        "value": "That is probably the biggest advantage of this method. It gives the developer freedom to improve the product while still respecting the safety of the production environment."
+      },
+      {
+        "type": "body",
+        "value": "Conclusion"
+      },
+      {
+        "type": "body",
+        "value": "Updating the UI of a live project can feel risky, especially when the product is already in use. But that risk becomes much easier to manage when the work is done through a separate development version."
+      },
+      {
+        "type": "body",
+        "value": "In our case, the full process included preparing the VPS, setting up a safe Git workflow through a fork and a development branch, bypassing production-only services for UI work, using TypeScript-based mock data to keep all pages usable, studying the existing product before redesigning it, updating the UI screen by screen, testing everything first with test data and then with real data, and only then preparing for production deployment."
+      },
+      {
+        "type": "body",
+        "value": "This experience showed that a good UI update is not only about making the product look better. It is also about building the right workflow around the update so that the product stays safe while development moves forward."
+      },
+      {
+        "type": "body",
+        "value": "When done properly, a development version is not just a copy of the project. It becomes a safe workspace where improvement can happen without damaging what already works."
+      }
+    ]
   }
 ]

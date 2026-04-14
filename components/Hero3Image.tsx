@@ -20,7 +20,7 @@ export const Hero3Image = () => {
     const inactiveClass = "text-[16px] px-6 py-3 rounded-full font-semibold text-white bg-gray-100/20 backdrop-blur-sm border border-white/30 font-medium cursor-pointer";
 
     return (
-        <div ref={ref} className="hero3-images mt-10 w-[1000px] h-[650px] rounded-4xl overflow-hidden relative">
+        <div ref={ref} className="hero3-images mt-10 w-[1000px] h-[750px] rounded-4xl overflow-hidden relative">
             <motion.div style={{ scale, width: "100%", height: "100%" }} className="hero3-image-parent" >
                 <motion.div 
                     className="hero3-image-child w-[200%] h-[100%] flex"

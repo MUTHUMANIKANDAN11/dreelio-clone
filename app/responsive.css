@@ -6,7 +6,80 @@
     display: none;
 }
 
-@media (max-width: 1024px) {
+/* Tablet Styles (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    body, html, main {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+
+    div[class*="w-[1000px]"],
+    div[class*="w-[970px]"],
+    div[class*="w-[940px]"],
+    div[class*="w-[900px]"],
+    div[class*="w-[800px]"],
+    div[class*="w-[750px]"] {
+        width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .hero6-content,
+    .hero8-content,
+    .hero9-content,
+    .footer-content,
+    .feature-box-container,
+    .row1 {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        padding-inline: 20px !important;
+    }
+
+    .feature-box-container > div,
+    .hero6-content > div {
+        flex: 1 1 45% !important;
+        min-width: 350px !important;
+        max-width: 100% !important;
+    }
+
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    .feature-box-img-wrapper {
+        overflow: hidden !important;
+    }
+
+    div[class*="text-[68px]"],
+    div[class*="text-[64px]"],
+    .hero-head {
+        font-size: 52px !important;
+        line-height: 60px !important;
+    }
+
+    div[class*="text-[48px]"],
+    div[class*="text-[46px]"],
+    .hero8-head,
+    .hero9-head,
+    .footer-head {
+        font-size: 40px !important;
+        line-height: 48px !important;
+    }
+
+    .hero, .hero3, .hero6, .hero8, .hero9, .footer {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+    
+    .header {
+        width: 90% !important;
+        max-width: 90% !important;
+    }
+}
+
+/* Pre-existing tablet/mobile block shifting to mobile only */
+@media (max-width: 768px) {
 
     body,
     html,

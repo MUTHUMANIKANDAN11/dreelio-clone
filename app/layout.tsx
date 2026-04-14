@@ -23,6 +23,7 @@ export const metadata: Metadata = {
 import localFont from 'next/font/local';
 import './globals.css';
 import './responsive.css';
+import SmoothScrolling from '@/components/SmoothScrolling';
 
 // 1. Configure the local font
 const openRunde = localFont({
@@ -57,7 +58,9 @@ export default function RootLayout({
     <html lang="en" className={`${openRunde.variable}`} suppressHydrationWarning>
       {/* 4. Apply the Tailwind font-sans class to the body */}
       <body className="font-sans bg-slate-50 text-slate-800 antialiased relative" suppressHydrationWarning>
-        {children}
+        <SmoothScrolling>
+          {children}
+        </SmoothScrolling>
       </body>
     </html>
   );

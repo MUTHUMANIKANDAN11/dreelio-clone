@@ -83,6 +83,19 @@ export default async function BlogDetail({ params }: { params: Promise<{ id: str
                                         <img src={item.value} alt="" className="w-full h-auto object-cover rounded-2xl" />
                                     </div>
                                 );
+                            case "code":
+                                return (
+                                    <div key={index} className="content-code w-full bg-[#1E1E1E] p-6 rounded-2xl mt-6 mb-2 shadow-lg relative group overflow-hidden">
+                                        <div className="flex gap-2 mb-4">
+                                            <div className="w-3 h-3 rounded-full bg-[#FF5F56]"></div>
+                                            <div className="w-3 h-3 rounded-full bg-[#FFBD2E]"></div>
+                                            <div className="w-3 h-3 rounded-full bg-[#27C93F]"></div>
+                                        </div>
+                                        <pre className="font-mono text-[15px] leading-relaxed text-[#52EB98] overflow-x-auto pb-2">
+                                            <code>{item.value}</code>
+                                        </pre>
+                                    </div>
+                                );
                             default:
                                 return null;
                         }

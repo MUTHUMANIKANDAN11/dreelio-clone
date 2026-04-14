@@ -26,10 +26,10 @@ export const Hero6Section = () => {
 
     const renderToolsList = (tools: number[]) => (
         <>
-            {tools.map((t, i) => <img key={`a-${i}`} src={`./tool${t}.svg`} alt="" className="h-[72px] w-auto" />)}
-            {tools.map((t, i) => <img key={`b-${i}`} src={`./tool${t}.svg`} alt="" className="h-[72px] w-auto" />)}
-            {tools.map((t, i) => <img key={`c-${i}`} src={`./tool${t}.svg`} alt="" className="h-[72px] w-auto" />)}
-            {tools.map((t, i) => <img key={`d-${i}`} src={`./tool${t}.svg`} alt="" className="h-[72px] w-auto" />)}
+            {tools.map((t, i) => <img key={`a-${i}`} src={`./tools/tool${t}.svg`} alt="" className="h-[72px] w-auto rounded-2xl bg-white p-2" />)}
+            {tools.map((t, i) => <img key={`b-${i}`} src={`./tools/tool${t}.svg`} alt="" className="h-[72px] w-auto rounded-2xl bg-white p-2" />)}
+            {tools.map((t, i) => <img key={`c-${i}`} src={`./tools/tool${t}.svg`} alt="" className="h-[72px] w-auto rounded-2xl bg-white p-2" />)}
+            {tools.map((t, i) => <img key={`d-${i}`} src={`./tools/tool${t}.svg`} alt="" className="h-[72px] w-auto rounded-2xl bg-white p-2" />)}
         </>
     );
 
@@ -60,16 +60,16 @@ export const Hero6Section = () => {
                     WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%)",
                  }}>
                   <motion.div className="hero6-content-right-content mt-10 w-full overflow-hidden" style={{ y: contentY }}>
-                    <motion.div className="hero6-right-top flex gap-2 w-max" style={{ x: xForward }}>
+                    <motion.div className="hero6-right-top flex gap-7 w-max" style={{ x: xForward }}>
                       {renderToolsList(toolsForward)}
                     </motion.div>
-                    <motion.div className="hero6-right-bottom flex gap-2 w-max mt-5" style={{ x: xBackward }}>
+                    <motion.div className="hero6-right-bottom flex gap-7 w-max pt-7" style={{ x: xBackward }}>
                       {renderToolsList(toolsBackward)}
                     </motion.div>
                   </motion.div>
                 </div>
               </div>
-              <div className="hero6-content-right-footer text-[16px] text-[#453F3D] mt-20">
+              <div className="hero6-content-right-footer text-[16px] text-[#453F3D] mt-18">
                 <span className="font-semibold">Seamless integrations</span>
                 . Plug AstraDial into the tools you love. Set up automations, sync your data, and make your systems work smarter together.
               </div>
